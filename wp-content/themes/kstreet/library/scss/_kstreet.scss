@@ -167,7 +167,7 @@ body.overflow {
 	font-family: $raleway;
 	margin-bottom: 0;
 	height: 125px;
-	background: rgba(1, 80, 123, 0.46);
+	background: rgba(173, 173, 173, 0.46);
 	top: 60px;
 	transition: .5s all;
 	padding-top: 30px;
@@ -183,17 +183,15 @@ body.overflow {
 		li {
 			float:left;
 			a {
-				color: #fff;
-				text-transform: uppercase;
-				font-size: 1.1rem !important;
-				padding-bottom: 4px;
-				margin-right: 27px;		
+				color: #303132;
+				font-size: 1.2rem !important;
+				padding: 0 1.3rem;	
 			}		
 		}
 		li.active {
 			a {
 				border-bottom: 1px dotted #ddd;
-				color: #ddd;
+				color: #303132;
 			}
 		}
 	}
@@ -209,7 +207,7 @@ body.overflow {
 }
 
 .post-menu.fixed {
-	background: rgba(1, 80, 123, 0.46);
+	background: rgba(173, 173, 173, 0.46);
 	top: 0px;
 	width: 100%;
 	z-index: 93;
@@ -223,7 +221,7 @@ body.overflow {
 	font-family: $raleway;
 	margin-bottom: 0;
 	height: 125px;
-	background: rgba(1, 80, 123, 0.46);
+	background: rgba(173, 173, 173, 0.46);
 	top: -110px;
 	transition: .7s all;
 	padding-top: 30px;
@@ -240,17 +238,15 @@ body.overflow {
 		li {
 			float:left;
 			a {
-				color: #fff;
-				text-transform: uppercase;
-				font-size: 1.1rem !important;
-				padding-bottom: 4px;
-				margin-right: 27px;			
+				color: #303132;
+				font-size: 1.2rem !important;
+				padding: 0 1.3rem;		
 			}		
 		}
 		li.active {
 			a {
 				border-bottom: 1px dotted #ddd;
-				color: #ddd;
+				color: #303132;
 			}
 		}		
 	}
@@ -267,7 +263,7 @@ body.overflow {
 
 .post-second-menu.fixed {
 	top: -5px;
-	background: rgba(43, 89, 125, 0.9);	
+	background: rgba(173, 173, 173, 0.46);	
 	opacity: 1;
 }
 
@@ -416,11 +412,6 @@ body.overflow {
 		margin:0 0 10px 0;
 		text-transform: uppercase;
 	}		
-}
-
-.button {
-	border-radius: 550px;
-	width: 100%;
 }
 
 .round-link-1 {
@@ -923,56 +914,56 @@ body.overflow {
 
 /* Footer */
 footer {
-	margin-top:0 !important;
-	padding:40px 0 0 0;
-	background:#424242;
-	color:#fff;
-	h4 {
-		color:#94AFB6;
-		font-family: $raleway;		
-	}
-	.footer-logo {
-		padding-bottom:45px;
-		img {
-			width: 60%;			
-		}
-	}
-	.copy-wrap {
-		background:#232323;
-	}
-	.sub-nav {
-		li {
-			float: left;
-			display: inline;
-			margin: 0;
-			font-family: $raleway;
-			font-weight: 300;
-			font-size: 1rem;
-			color:#E2F1F6;
-			width: 100%;
-			text-align: left; 
-			a {
-				padding:0;
-				color:#E2F1F6;	
-				&:hover {
-					color:#b0bec3;
-				}
-			}
-		}
-		li.active a {
-			border-radius: 3px;
-			font-weight: 300;
-			font-size: 1rem;
-			background: none;
-			padding: 0;
-			cursor: pointer;
-			color: #999999;
-			&:hover {
-				background:none;
-				cursor: pointer;
-			}
-		}			
-	}
+  margin-top:0 !important;
+  padding:40px 0 0 0;
+  background:#424242;
+  color:#fff;
+  h4 {
+    color:#94AFB6;
+    font-family: $raleway;		
+  }
+  .footer-logo {
+    padding-bottom:45px;
+    img {
+      width: 60%;			
+    }
+  }
+  .copy-wrap {
+  background:#232323;
+  }
+  .sub-nav {
+    li {
+      float: left;
+      display: inline;
+      margin: 0;
+      font-family: $raleway;
+      font-weight: 300;
+      font-size: 1rem;
+      color:#E2F1F6;
+      width: 100%;
+      text-align: left; 
+      a {
+      	padding:0;
+      	color:#E2F1F6;	
+      	&:hover {
+      		color:#b0bec3;
+      	}
+      }
+    }
+    li.active a {
+      border-radius: 3px;
+      font-weight: 300;
+      font-size: 1rem;
+      background: none;
+      padding: 0;
+      cursor: pointer;
+      color: #999999;
+      &:hover {
+      	background:none;
+      	cursor: pointer;
+      }
+    }			
+  }
 }
 .copyright {
 	text-align: center;
