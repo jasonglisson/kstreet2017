@@ -1,283 +1,440 @@
 <?php
-if( ! defined( 'MC4WP_LITE_VERSION' ) ) {
-	header( 'Status: 403 Forbidden' );
-	header( 'HTTP/1.1 403 Forbidden' );
-	exit;
-}
 
+/**
+ * Class MC4WP_MailChimp
+ *
+ * @access private
+ * @ignore
+ */
 class MC4WP_MailChimp {
 
 	/**
-	 * Get MailChimp lists
-	 * Try cache first, then try API, then try fallback cache.
-	 *
-	 * @param bool $force_renewal
-	 * @param bool $force_fallback
-	 *
-	 * @return array
+	 * @var MC4WP_API_v3
 	 */
-	public function get_lists( $force_renewal = false, $force_fallback = false ) {
+	public $api;
 
-		$cached_lists = get_transient( 'mc4wp_mailchimp_lists' );
+	/**
+	 * @var string
+	 */
+	public $error_code = '';
 
-		// if force_fallback is true, get lists from older transient
-		if( true === $force_fallback ) {
-			$cached_lists = get_transient( 'mc4wp_mailchimp_lists_fallback' );
+	/**
+	 * @var string
+	 */
+	public $error_message = '';
+
+	/**
+	 * MC4WP_MailChimp constructor.
+	 */
+	public function __construct() {
+		$this->api = mc4wp( 'api' );
+	}
+
+	/**
+	 *
+	 * Sends a subscription request to the MailChimp API
+	 *
+	 * @param string  $list_id           The list id to subscribe to
+	 * @param string  $email_address             The email address to subscribe
+	 * @param array    $args
+	 * @param boolean $update_existing   Update information if this email is already on list?
+	 * @param boolean $replace_interests Replace interest groupings, only if update_existing is true.
+	 *
+	 * @return object
+	 */
+	public function list_subscribe( $list_id, $email_address, array $args = array(), $update_existing = false, $replace_interests = true ) {
+		$this->reset_error();
+
+		$default_args = array(
+			'status' => 'pending',
+			'email_address' => $email_address,
+			'interests' => array(),
+			'merge_fields' => array(),
+		);
+        $already_on_list = false;
+
+		// setup default args
+		$args = $args + $default_args;
+
+		// first, check if subscriber is already on the given list
+		try {
+			$existing_member_data = $this->api->get_list_member( $list_id, $email_address );
+
+			if( $existing_member_data->status === 'subscribed' ) {
+			    $already_on_list = true;
+
+				// if we're not supposed to update, bail.
+				if( ! $update_existing ) {
+					$this->error_code = 214;
+					$this->error_message = 'That subscriber already exists.';
+					return null;
+				}
+
+				$args['status'] = 'subscribed';
+
+				// this key only exists if list actually has interests
+				if( isset( $existing_member_data->interests ) ) {
+					$existing_interests = (array) $existing_member_data->interests;
+
+					// if replace, assume all existing interests disabled
+					if( $replace_interests ) {
+						$existing_interests = array_fill_keys( array_keys( $existing_interests ), false );
+					}
+
+					$args['interests'] = $args['interests'] + $existing_interests;
+				}
+			} else {
+			    // delete list member so we can re-add it...
+			    $this->api->delete_list_member( $list_id, $email_address );
+            }
+		} catch ( MC4WP_API_Resource_Not_Found_Exception $e ) {
+			// subscriber does not exist (not an issue in this case)
+		} catch( MC4WP_API_Exception $e ) {
+            // other errors.
+            $this->error_code = $e->getCode();
+            $this->error_message = $e;
+			return null;
 		}
 
-		if ( true === $force_renewal || false === $cached_lists || empty( $cached_lists ) ) {
+		try {
+			$data = $this->api->add_list_member( $list_id, $args );
+		} catch ( MC4WP_API_Exception $e ) {
+			$this->error_code = $e->getCode();
+			$this->error_message = $e;
+			return null;
+		}
 
-			// make api request for lists
-			$api = mc4wp_get_api();
-			$lists_data = $api->get_lists();
+		$data->was_already_on_list = $already_on_list;
 
-			if ( is_array( $lists_data ) ) {
+		return $data;
+	}
 
-				$lists = array();
+	/**
+	 *
+	 * @param string $list_id
+	 * @param string $email_address
+	 *
+	 * @return boolean
+	 */
+	public function list_unsubscribe( $list_id, $email_address ) {
+		$this->reset_error();
 
-				foreach ( $lists_data as $list ) {
+		try {
+			$this->api->update_list_member( $list_id, $email_address, array( 'status' => 'unsubscribed' ) );
+		} catch( MC4WP_API_Resource_Not_Found_Exception $e ) {
+		    // if email wasn't even on the list: great.
+		    return true;
+        } catch( MC4WP_API_Exception $e ) {
+			$this->error_code = $e->getCode();
+			$this->error_message = $e;
+			return false;
+		}
 
-					$lists["{$list->id}"] = (object) array(
-						'id' => $list->id,
-						'name' => $list->name,
-						'subscriber_count' => $list->stats->member_count,
-						'merge_vars' => array(),
-						'interest_groupings' => array()
-					);
+		return true;
+	}
 
-					// get interest groupings
-					$groupings_data = $api->get_list_groupings( $list->id );
-					if ( $groupings_data ) {
-						$lists["{$list->id}"]->interest_groupings = array_map( array( $this, 'strip_unnecessary_grouping_properties' ), $groupings_data );
-					}
+	/**
+	 * Checks if an email address is on a given list with status "subscribed"
+	 *
+	 * @param string $list_id
+	 * @param string $email_address
+	 *
+	 * @return boolean
+	 */
+	public function list_has_subscriber( $list_id, $email_address ) {
+        try{
+		    $data = $this->api->get_list_member( $list_id, $email_address );
+        } catch( MC4WP_API_Resource_Not_Found_Exception $e ) {
+            return false;
+        }
 
-				}
+		return ! empty( $data->id ) && $data->status === 'subscribed';
+	}
 
-				// get merge vars for all lists at once
-				$merge_vars_data = $api->get_lists_with_merge_vars( array_keys( $lists ) );
-				if ( $merge_vars_data ) {
-					foreach ( $merge_vars_data as $list ) {
-						// add merge vars to list
-						$lists["{$list->id}"]->merge_vars = array_map( array( $this, 'strip_unnecessary_merge_vars_properties' ), $list->merge_vars );
-					}
-				}
 
-				// store lists in transients
-				set_transient( 'mc4wp_mailchimp_lists', $lists, ( 24 * 3600 ) ); // 1 day
-				set_transient( 'mc4wp_mailchimp_lists_fallback', $lists, 1209600 ); // 2 weeks
+	/**
+	 * Empty the Lists cache
+     */
+	public function empty_cache() {
+		global $wpdb;
 
-				return $lists;
-			} else {
-				// api request failed, get fallback data (with longer lifetime)
-				$cached_lists = get_transient( 'mc4wp_mailchimp_lists_fallback' );
+		delete_option( 'mc4wp_mailchimp_list_ids' );
+		$wpdb->query( "DELETE FROM {$wpdb->options} WHERE option_name LIKE 'mc4wp_mailchimp_list_%'" );
+		delete_transient( 'mc4wp_list_counts' );
+	}
 
-				if ( ! $cached_lists ) {
-					return array();
+    /**
+     * Get MailChimp lists from cache.
+     * 
+     * @param boolean deprecated parameter. 
+     * @return array
+     */
+	public function get_cached_lists() {
+		return $this->get_lists( false );
+	}
+
+	/**
+	 * Get a specific MailChimp list from local DB.
+	 *
+	 * @param string $list_id
+	 * @return MC4WP_MailChimp_List
+	 */ 
+	public function get_cached_list( $list_id ) {
+		return $this->get_list( $list_id, false );
+	}
+
+	/**
+	 * Get MailChimp lists, from cache or remote API.
+     *
+     * @param boolean $force Whether to force a result by hitting MailChimp API 
+	 * @return array
+	 */
+	public function get_lists( $force = true ) {
+
+		// first, get all list id's
+		$list_ids = $this->get_list_ids( $force );
+
+		// then, fill $lists array with individual list details
+		$lists = array();
+		foreach( $list_ids as $list_id ) {
+			$list = $this->get_list( $list_id, $force );
+			$lists["{$list_id}"] = $list;
+		}
+
+		return $lists;
+	}
+
+    /**
+     * @param string $list_id
+     *
+     * @return MC4WP_MailChimp_List
+     */
+	private function fetch_list( $list_id ) {
+		try{
+			$list_data = $this->api->get_list( $list_id, array( 'fields' => 'id,name,stats,web_id' ) );
+
+			// create local object
+			$list = new MC4WP_MailChimp_List( $list_data->id, $list_data->name );
+			$list->subscriber_count = $list_data->stats->member_count;
+			$list->web_id = $list_data->web_id;
+
+			// get merge fields (if any)
+			if( $list_data->stats->merge_field_count > 0 ) {
+				$field_data = $this->api->get_list_merge_fields( $list->id, array( 'count' => 100, 'fields' => 'merge_fields.name,merge_fields.tag,merge_fields.type,merge_fields.required,merge_fields.default_value,merge_fields.options,merge_fields.public' ) );
+
+				// hydrate data into object
+				foreach( $field_data as $data ) {
+					$object = MC4WP_MailChimp_Merge_Field::from_data( $data );
+					$list->merge_fields[] = $object;
 				}
 			}
 
+			// get interest categories
+			$interest_categories_data = $this->api->get_list_interest_categories( $list->id, array( 'count' => 100, 'fields' => 'categories.id,categories.title,categories.type' ) );
+			foreach( $interest_categories_data as $interest_category_data ) {
+				$interest_category = MC4WP_MailChimp_Interest_Category::from_data( $interest_category_data );
+
+				// fetch groups for this interest
+				$interests_data = $this->api->get_list_interest_category_interests( $list->id, $interest_category->id, array( 'count' => 100, 'fields' => 'interests.id,interests.name') );
+				foreach( $interests_data as $interest_data ) {
+					$interest_category->interests[ $interest_data->id ] = $interest_data->name;
+				}
+
+				$list->interest_categories[] = $interest_category;
+			}
+		} catch( MC4WP_API_Exception $e ) {
+			return null;
+		}
+	
+		// save in option
+		update_option( 'mc4wp_mailchimp_list_' . $list_id, $list, false ); 
+        return $list;
+	}
+
+	/**
+	 * Get MailChimp list ID's
+	 *
+	 * @param bool $force Force result by hitting MailChimp API
+	 * @return array
+	 */ 
+	public function get_list_ids( $force = false ) {
+		$list_ids = (array) get_option( 'mc4wp_mailchimp_list_ids', array() );
+
+		if( empty( $list_ids ) && $force ) {
+			$list_ids = $this->fetch_list_ids();	
+		}
+		
+		return $list_ids;
+	}
+
+	/**
+	 * @return array
+	 */ 
+	public function fetch_list_ids() {
+	   try{
+            $lists_data = $this->api->get_lists( array( 'count' => 200, 'fields' => 'lists.id' ) );
+        } catch( MC4WP_API_Exception $e ) {
+            return array();
+        }
+
+		$list_ids = wp_list_pluck( $lists_data, 'id' );
+
+		// store list id's 
+		update_option( 'mc4wp_mailchimp_list_ids', $list_ids, false );
+	
+		return $list_ids;
+	}
+
+    /**
+	 * Fetch list ID's + lists from MailChimp.
+	 *
+	 * @return bool
+     */
+	public function fetch_lists() {
+        // try to increase time limit as this can take a while
+		@set_time_limit(300);
+		$list_ids = $this->fetch_list_ids();
+
+		// randomize array order
+		shuffle( $list_ids );
+
+		// fetch individual list details
+		foreach ( $list_ids as $list_id ) {
+			$list = $this->fetch_list( $list_id );
 		}
 
-		return $cached_lists;
-	}
+		return ! empty( $list_ids );
+    }
 
 	/**
 	 * Get a given MailChimp list
 	 *
-	 * @param int $list_id
-	 * @param bool $force_renewal
-	 * @param bool $force_fallback
-	 *
-	 * @return bool
+	 * @param string $list_id
+	 * @param bool $force Whether to force a result by hitting remote API
+	 * @return MC4WP_MailChimp_List
 	 */
-	public function get_list( $list_id, $force_renewal = false, $force_fallback = false ) {
-		$lists = $this->get_lists( $force_renewal, $force_fallback );
+	public function get_list( $list_id, $force = false ) {
+		$list = get_option( 'mc4wp_mailchimp_list_' . $list_id );
 
-		if( isset( $lists[$list_id] ) ) {
-			return $lists[$list_id];
+		if( empty( $list ) && $force ) {
+			$list = $this->fetch_list( $list_id );
 		}
 
-		return false;
+		if( empty( $list ) ) {
+			return new MC4WP_MailChimp_List( '', 'Unknown List' );
+		}
+
+		return $list;
 	}
 
 	/**
-	 * Get the name of the MailChimp list with the given ID.
+	 * Get an array of list_id => number of subscribers
 	 *
-	 * @param int $id
-	 * @return string
+	 * @return array
 	 */
-	public function get_list_name( $id ) {
-		$list = $this->get_list( $id );
+	public function get_subscriber_counts() {
 
-		if( is_object( $list ) && isset( $list->name ) ) {
-			return $list->name;
+		// get from transient
+		$list_counts = get_transient( 'mc4wp_list_counts' );
+		if( is_array( $list_counts ) ) {
+			return $list_counts;
 		}
 
-		return '';
-	}
+		// transient not valid, fetch from API
+        try {
+		    $lists = $this->api->get_lists(  array( 'count' => 100, 'fields' => 'lists.id,lists.stats' ) );
+        } catch( MC4WP_API_Exception $e ) {
+            return array();
+        }
 
-	/**
-	 * Get the interest grouping object for a given list.
-	 *
-	 * @param string $list_id ID of MailChimp list that contains the grouping
-	 * @param string $grouping_id ID of the Interest Grouping
-	 *
-	 * @return object|null
-	 */
-	public function get_list_grouping( $list_id, $grouping_id ) {
-		$list = $this->get_list( $list_id, false, true );
+		$list_counts = array();
 
-		if( is_object( $list ) && isset( $list->interest_groupings ) ) {
-			foreach( $list->interest_groupings as $grouping ) {
-
-				if( $grouping->id !== $grouping_id ) {
-					continue;
-				}
-
-				return $grouping;
-			}
+		// we got a valid response
+		foreach ( $lists as $list ) {
+			$list_counts["{$list->id}"] = $list->stats->member_count;
 		}
 
-		return null;
+		$seconds = 3600;
+
+		/**
+		 * Filters the cache time for MailChimp lists configuration, in seconds. Defaults to 3600 seconds (1 hour).
+		 *
+		 * @since 2.0
+		 * @param int $seconds
+		 */
+		$transient_lifetime = (int) apply_filters( 'mc4wp_lists_count_cache_time', $seconds );
+		set_transient( 'mc4wp_list_counts', $list_counts, $transient_lifetime );
+
+		// bail
+		return $list_counts;
 	}
 
-	/**
-	 * Get the name of a list grouping by its ID
-	 *
-	 * @param $list_id
-	 * @param $grouping_id
-	 *
-	 * @return string
-	 */
-	public function get_list_grouping_name( $list_id, $grouping_id ) {
-
-		$grouping = $this->get_list_grouping( $list_id, $grouping_id );
-		if( $grouping ) {
-			return $grouping->name;
-		}
-
-		return '';
-	}
-
-	/**
-	 * Get the group object for a group in an interest grouping
-	 *
-	 * @param string $list_id ID of MailChimp list that contains the grouping
-	 * @param string $grouping_id ID of the Interest Grouping containing the group
-	 * @param string $group_id_or_name ID or name of the Group
-	 * @return object|null
-	 */
-	public function get_list_grouping_group( $list_id, $grouping_id, $group_id_or_name ) {
-		$grouping = $this->get_list_grouping( $list_id, $grouping_id );
-		if( is_object( $grouping ) && isset( $grouping->groups ) ) {
-			foreach( $grouping->groups as $group ) {
-
-				if( $group->id == $group_id_or_name || $group->name === $group_id_or_name ) {
-					return $group;
-				}
-
-			}
-		}
-
-		return null;
-	}
 
 	/**
 	 * Returns number of subscribers on given lists.
 	 *
-	 * @param array $list_ids Array of list id's.
-	 * @return int Sum of subscribers for given lists.
+	 * @param array|string $list_ids Array of list ID's, or single string.
+	 * @return int Total # subscribers for given lists.
 	 */
 	public function get_subscriber_count( $list_ids ) {
 
-		// don't count when $list_ids is empty or not an array
-		if( ! is_array( $list_ids ) || count( $list_ids ) === 0 ) {
+		// make sure we're getting an array
+		if( ! is_array( $list_ids ) ) {
+			$list_ids = array( $list_ids );
+		}
+
+		// if we got an empty array, return 0
+		if( empty( $list_ids ) ) {
 			return 0;
 		}
 
-		$list_counts = get_transient( 'mc4wp_list_counts' );
+		// get total number of subscribers for all lists
+		$counts = $this->get_subscriber_counts();
 
-		if ( false === $list_counts ) {
-			// make api call
-			$api = mc4wp_get_api();
-			$lists = $api->get_lists();
-			$list_counts = array();
-
-			if ( is_array( $lists ) ) {
-
-				foreach ( $lists as $list ) {
-					$list_counts["{$list->id}"] = $list->stats->member_count;
-				}
-
-				$transient_lifetime = apply_filters( 'mc4wp_lists_count_cache_time', 1200 ); // 20 mins by default
-
-				set_transient( 'mc4wp_list_counts', $list_counts, $transient_lifetime );
-				set_transient( 'mc4wp_list_counts_fallback', $list_counts, 86400 ); // 1 day
-			} else {
-				// use fallback transient
-				$list_counts = get_transient( 'mc4wp_list_counts_fallback' );
-				if ( false === $list_counts ) {
-					return 0;
-				}
-			}
-		}
-
-		// start calculating subscribers count for all list combined
+		// start calculating subscribers count for all given list ID's combined
 		$count = 0;
 		foreach ( $list_ids as $id ) {
-			$count += ( isset( $list_counts[$id] ) ) ? $list_counts[$id] : 0;
+			$count += ( isset( $counts["{$id}"] ) ) ? $counts["{$id}"] : 0;
 		}
 
-		return apply_filters( 'mc4wp_subscriber_count', $count );
+		/**
+		 * Filters the total subscriber_count for the given List ID's.
+		 *
+		 * @since 2.0
+		 * @param string $count
+		 * @param array $list_ids
+		 */
+		return apply_filters( 'mc4wp_subscriber_count', $count, $list_ids );
 	}
 
 	/**
-	 * Build the group array object which will be stored in cache
-	 *
-	 * @param object $group
-	 * @return object
+	 * Resets error properties.
 	 */
-	public function strip_unnecessary_group_properties( $group ) {
-		return (object) array(
-			'name' => $group->name,
-		);
+	public function reset_error() {
+		$this->error_message = '';
+		$this->error_code = '';
 	}
 
 	/**
-	 * Build the groupings array object which will be stored in cache
-	 *
-	 * @param object $grouping
-	 * @return object
+	 * @return bool
 	 */
-	public function strip_unnecessary_grouping_properties( $grouping ) {
-		return (object) array(
-			'id' => $grouping->id,
-			'name' => $grouping->name,
-			'groups' => array_map( array( $this, 'strip_unnecessary_group_properties' ), $grouping->groups ),
-			'form_field' => $grouping->form_field,
-		);
+	public function has_error() {
+		return ! empty( $this->error_code );
 	}
 
 	/**
-	 * Build the merge_var array object which will be stored in cache
-	 *
-	 * @param object $merge_var
-	 * @return object
+	 * @return string
 	 */
-	public function strip_unnecessary_merge_vars_properties( $merge_var ) {
-		$array = array(
-			'name' => $merge_var->name,
-			'field_type' => $merge_var->field_type,
-			'req' => $merge_var->req,
-			'tag' => $merge_var->tag,
-		);
-
-		if ( isset( $merge_var->choices ) ) {
-			$array['choices'] = $merge_var->choices;
-		}
-
-		return (object) $array;
-
+	public function get_error_message() {
+		return $this->error_message;
 	}
+
+	/**
+	 * @return string
+	 */
+	public function get_error_code() {
+		return $this->error_code;
+	}
+
 
 }

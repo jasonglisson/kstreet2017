@@ -129,7 +129,7 @@ function joints_scripts_and_styles() {
     wp_enqueue_style( 'foundation-icons', get_template_directory_uri() . '/library/css/icons/foundation-icons.css', array(), $theme_version, 'all' );
 
 	// kstreet styles
-    wp_enqueue_style( 'kstreet', get_template_directory_uri() . '/library/css/kstreet.css', array(), $theme_version, 'all' );	
+    //wp_enqueue_style( 'kstreet', get_template_directory_uri() . '/library/css/kstreet.css', array(), $theme_version, 'all' );	
 	
     // comment reply script for threaded comments
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
