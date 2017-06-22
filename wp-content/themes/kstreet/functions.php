@@ -204,10 +204,15 @@ function custom_field_excerpt() {
 	return apply_filters('the_excerpt', $text);
 }
 
+function app_link() {
+  $app_link = get_field('application_link', 'option');
+  return $app_link;
+}
+
 add_filter( 'wp_nav_menu_items', 'add_search_to_nav', 10, 2 );
 
 function add_search_to_nav( $items, $args ){
-    $items .= '<li><a href="#" class="button">Submit Application</a></li>';
+    $items .= '<li><a href="' . app_link() .  '" target="_blank" class="button application-btn">Submit Application</a></li>';
     return $items;
 }
 

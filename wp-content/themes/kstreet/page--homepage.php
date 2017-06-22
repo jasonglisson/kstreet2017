@@ -13,25 +13,11 @@ Template Name: Homepage
 				    <div id="main" class="large-12 medium-12 columns" role="main">
 					    	<h3 class="raleway"><?php the_field('homepage_heading'); ?></h3>    					
     				</div> <!-- end #main -->
- 				    <div class="large-6 medium-6 columns">	   				
-    					<a class="button round-link-1" href="/about#our-process">OUR INVESTMENT PROCESS</a>	
- 				    </div>	
-				    <div class="large-6 medium-6 columns">				    
-					    <a class="button round-link-2" href="/application">INITIAL APPLICATION</a>
-				    </div>
-				    
-				    
+
 				</div> <!-- end #inner-content -->
 <!-- 				<div class="overlay"></div> -->
 				<div class="arrow show-for-medium-up"></div>
 			</div> <!-- end #content -->
-			<div id="founded">
-				<div class="row">
-					<div class="large-12">
-						<?php the_field('founded_text'); ?>
-					</div>
-				</div>
-			</div>
 			<div class="kstreet-tweets">
 				<div class="row">
 					<div class="large-12 columns">

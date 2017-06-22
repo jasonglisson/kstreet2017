@@ -160,7 +160,7 @@ body.overflow {
 	text-indent: -9999px;
 }
 
-.post-menu {
+.post-menu, .post-second-menu {
 	margin-top: -85px;
 	z-index: 93;
 	position: absolute;
@@ -184,9 +184,19 @@ body.overflow {
 			float:left;
 			a {
 				color: #303132;
-				font-size: 1.2rem !important;
+				font-size: 1.2rem;
 				padding: 0 1.3rem;	
-			}		
+			}
+      .application-btn {
+        font-weight: 400;
+        padding: 1rem 1.2rem;
+        color: #fff;
+        font-size: 1rem;
+        margin-top: -1rem;
+        margin-left: 1rem;
+        border-radius: .2rem;
+        background: #00b685;
+      }				
 		}
 		li.active {
 			a {
@@ -228,37 +238,6 @@ body.overflow {
 	width:100%;
 	opacity: 0;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.73);
-	ul {
-		list-style: none;
-		list-style-type: none;
-		padding-top: 33px;
-		margin-left:0;		
-		float:right;	
-		font-weight: 300;	
-		li {
-			float:left;
-			a {
-				color: #303132;
-				font-size: 1.2rem !important;
-				padding: 0 1.3rem;		
-			}		
-		}
-		li.active {
-			a {
-				border-bottom: 1px dotted #ddd;
-				color: #303132;
-			}
-		}		
-	}
-	.small-3{
-		margin-top: 31px;
-		padding-left: 27px;
-	}
-	.small-9 {
-		color:#fff;
-		margin-top: 18px;
-		font-size: 2rem;
-	}	
 }
 
 .post-second-menu.fixed {
@@ -343,34 +322,27 @@ body.overflow {
 
 /* Homepage */
 .home {
-	background: url(../images/mall-bg.jpg) no-repeat;
+	background: url(../images/bg.jpg) no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
 	#container {	
 		#content {
 			position: relative;
 			#inner-content {
-				padding-top: 250px;
+				padding-top: 19rem;
 				position:relative;
 				z-index:2;
 				opacity: 0;
 				transition:.3s all;
 			}
 			#main {
-				h1 {
-					text-transform: uppercase;
-					color: #fff;
-				}
 				h3 {
-					text-align: center;
-					color: #FFF;
-					font-size: 33px;
-					padding: 20px;
-					margin-bottom: 40px;
-					letter-spacing: 2px;
-					text-transform: none;
-					text-shadow: 0 0 19px #000000;	
-					background:rgba(234,227,219,0.31);	
+          p {
+            color: #1a1a1a;
+            text-align: right;
+            font-size: 1.8rem;
+            text-transform: none;
+          }
 				}
 			}
 			.arrow {
