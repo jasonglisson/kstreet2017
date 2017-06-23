@@ -382,8 +382,9 @@ body.overflow {
   background: #f6f6f6;
   padding: 2rem;
   width: 100%;
+  height: 860px;
   float: left; 
-  h2 {
+  h1 {
     color: #054a73; 
     font-weight: 600;
     text-align: center;   
@@ -400,6 +401,13 @@ body.overflow {
     float: left;
     z-index: 2;
     position: relative;
+    transition: .3s all;
+    &:hover {
+      background: rgb(251, 251, 251);
+      -ms-transform: rotate(2deg); /* IE 9 */
+      -webkit-transform: rotate(2deg); /* Chrome, Safari, Opera */
+      transform: rotate(2deg);        
+    }
   }
   .process-line {
     background: url(../images/dash.png);
@@ -410,30 +418,80 @@ body.overflow {
     position: relative;
   }
   .step-1 {
-    left: 315px;
+    left: 260px;
+    img {
+      margin-left: 20px;
+      margin-top: 23px;      
+    }
   }
   .step-2 {
-    left: 200px;
-    top: 166px;    
+    left: 143px;
+    top: 166px;  
+    img {
+      margin-left: 20px;
+      margin-top: 29px;      
+    }      
   }
   .step-3 {
-    left: 687px;
+    left: 628px;
     top: 52px;
+    img {
+      margin-left: 23px;
+      margin-top: 30px;     
+    }    
   }
-  .line-1 {
-    left: 321px;
-    top: 140px;
-    width: 100px;
+  .step-4 {
+    left: 513px;
+    top: 283px; 
+    img {
+      margin-left: 25px;
+      margin-top: 23px;     
+    }       
   }
-  .line-2 {
-    left: 412px;
-    top: 215px; 
-    width: 280px;  
+  .step-5 {
+    left: 933px;
+    top: 169px;  
+    img {
+      margin-left: 34px;
+      margin-top: 19px;     
+    }      
+  }
+  .step-6 {
+    left: 818px;
+    top: 345px; 
+    img {
+      margin-left: 20px;
+      margin-top: 23px;      
+    }       
   }
   .line-1, .line-3, .line-5 {
     -ms-transform: rotate(90deg); /* IE 9 */
     -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
     transform: rotate(90deg);    
+  }  
+  .line-1 {
+    left: 267px;
+    top: 140px;
+    width: 100px;
+  }
+  .line-2 {
+    left: 354px;
+    top: 215px; 
+    width: 280px;  
+  }
+  .line-3 {
+    left: 609px;
+    top: 307px;
+    width: 150px;    
+  }
+  .line-4 {
+    left: 664px;
+    top: 413px;    
+  }
+  .line-5 {
+    left: 938px;
+    top: 484px;
+    width: 100px;    
   }
 }
 
