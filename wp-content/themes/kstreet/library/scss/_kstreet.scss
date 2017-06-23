@@ -371,48 +371,82 @@ body.overflow {
 	}	
 }
 
-.mailchimp-signup {
-	background:#fff;
-	padding: 50px 0 70px 0;
-	.email {
-		height: 50px !important;
-		background: #F6F6F6;
-	}
-	h3 {
-		color:#95AFBA;
-		font-family:$raleway;
-		margin:0 0 10px 0;
-		text-transform: uppercase;
-	}		
+.about-us {
+  background: #fff;
+  padding: 2%;
+  width: 100%;
+  float: left;
 }
 
-.round-link-1 {
-	background:#1f82c5;
-	letter-spacing: 2px;
-	font-size: 17px;
-	border: 3px solid rgba(255, 255, 255, 0.76);
-	padding: 22px 0;	
-	&:hover {
-		background:rgba(31, 131, 197, 0.85);	
-	}
+.process {
+  background: #f6f6f6;
+  padding: 2rem;
+  width: 100%;
+  float: left; 
+  h2 {
+    color: #054a73; 
+    font-weight: 600;
+    text-align: center;   
+  } 
+  .process-wrap {
+    display: table;
+  }
+  .round-step {
+    background: #fff;
+    height: 115px;
+    width: 115px;
+    border-radius: 50%;
+    border: 1px solid #888888;
+    float: left;
+    z-index: 2;
+    position: relative;
+  }
+  .process-line {
+    background: url(../images/dash.png);
+    height: 17px;
+    background-repeat: repeat;
+    width: 270px;
+    z-index: 1;
+    position: relative;
+  }
+  .step-1 {
+    left: 315px;
+  }
+  .step-2 {
+    left: 200px;
+    top: 166px;    
+  }
+  .step-3 {
+    left: 687px;
+    top: 52px;
+  }
+  .line-1 {
+    left: 321px;
+    top: 140px;
+    width: 100px;
+  }
+  .line-2 {
+    left: 412px;
+    top: 215px; 
+    width: 280px;  
+  }
+  .line-1, .line-3, .line-5 {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);    
+  }
 }
 
-.round-link-2 {
-	background:#add44f;
-	letter-spacing: 2px;
-	font-size: 17px;
-	border: 3px solid rgba(255, 255, 255, 0.76);
-	padding: 22px 0;
-	&:hover {
-		background:rgba(172, 212, 78, 0.85);	
-	}	
-}
-
-.header-line {
-	background: #089DFF;
-	width: 75px;
-	height: 2px;
-	margin-bottom: 30px;
+.portfolio {
+  background: #fff;
+  padding: 2rem;
+  width: 100%;
+  float: left; 
+  h2 {
+    color: #054a73; 
+    font-weight: 600;
+    text-align: center;   
+  }   
 }
 
 .press-content {
@@ -614,40 +648,6 @@ body.overflow {
 		text-transform: uppercase;	
 	}
 }
-.process {
-	padding:30px 0;
-	.process-item {
-		padding:20px 0;
-		border-bottom:1px dotted #ddd;
-		transition: .3s all;
-		.process-icons {
-			text-align: center;
-			i {
-				font-size: 3.5rem;
-				transition: .3s all;
-				color:#089dff;
-			}
-		}
-		h3 {
-			font-family: $raleway;
-			text-transform: uppercase;	
-			transition: .3s all;						
-		}
-		&:hover {
-			background: #FBFBFB;
-			h3 {
-				color:#5a5a5a;		
-			}
-			i {
-				color:#666666;
-			}
-		}		
-	}
-	.process-item:last-of-type {
-		border-bottom:none;
-	}
-}
-
 
 .top-title-wrap {
 	position:relative;		
