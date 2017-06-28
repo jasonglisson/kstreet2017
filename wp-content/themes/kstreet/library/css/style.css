@@ -6759,7 +6759,7 @@ body.overflow {
   font-family: "Lato", sans-serif;
   margin-bottom: 0;
   height: 125px;
-  background: rgba(173, 173, 173, 0.46);
+  background: rgba(247, 247, 247, 0.69);
   top: 60px;
   transition: .5s all;
   padding-top: 30px;
@@ -6799,7 +6799,7 @@ body.overflow {
     font-size: 2rem; }
 
 .post-menu.fixed {
-  background: rgba(173, 173, 173, 0.46);
+  background: rgba(247, 247, 247, 0.69);
   top: 0px;
   width: 100%;
   z-index: 93;
@@ -6812,7 +6812,7 @@ body.overflow {
   font-family: "Lato", sans-serif;
   margin-bottom: 0;
   height: 125px;
-  background: rgba(173, 173, 173, 0.46);
+  background: rgba(247, 247, 247, 0.69);
   top: -110px;
   transition: .7s all;
   padding-top: 30px;
@@ -6822,7 +6822,7 @@ body.overflow {
 
 .post-second-menu.fixed {
   top: -5px;
-  background: rgba(173, 173, 173, 0.46);
+  background: rgba(247, 247, 247, 0.69);
   opacity: 1; }
 
 /* Coming Soon */
