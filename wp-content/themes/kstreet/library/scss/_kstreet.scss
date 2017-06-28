@@ -409,6 +409,7 @@ body.overflow {
       display: block;
       float: right;
       font-size: 2rem;
+      position: relative;
       width: 200px;
       color: #00867f;
       transition: .3s all;
@@ -436,9 +437,13 @@ body.overflow {
     }
     span {
       left: 217px;
-      position: relative;
-      top: -47px;      
+      top: -47px;     
     }
+    &:hover {
+      span {
+        margin-right: 4px;        
+      }
+    }     
   }
   .step-2 {
     left: 143px;
@@ -446,7 +451,17 @@ body.overflow {
     img {
       margin-left: 20px;
       margin-top: 29px;      
-    }      
+    }   
+    span {
+      left: -144px;
+      top: -46px;
+      width: 250px;     
+    }   
+    &:hover {
+      span {
+        margin-right: -4px;        
+      }
+    }     
   }
   .step-3 {
     left: 628px;
@@ -455,6 +470,16 @@ body.overflow {
       margin-left: 23px;
       margin-top: 30px;     
     }    
+    span {
+      width: 250px;
+      right: -270px;
+      top: -53px;
+    }
+    &:hover {
+      span {
+        margin-right: 4px;        
+      }
+    }     
   }
   .step-4 {
     left: 513px;
@@ -516,12 +541,12 @@ body.overflow {
 $background: #fefefe;
 $text: #4b507a;
 
-$cyan: #00867f;
-$yellow: #00867f;
-$orange: #00867f;
-$red: #00867f;
-$purple: #00867f;
-$blue: #00867f;
+$cyan: #00b685;
+$yellow: #00b685;
+$orange: #00b685;
+$red: #00b685;
+$purple: #00b685;
+$blue: #00b685;
 
 // Basic styles
 button, .round-step {

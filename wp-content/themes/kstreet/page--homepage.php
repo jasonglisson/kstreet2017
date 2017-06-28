@@ -28,15 +28,15 @@ Template Name: Homepage
       <div class="process-wrap">
         <div class="round-step spin circle step-1"><img src="<?php print get_template_directory_uri(); ?>/library/images/application-icon.png" alt="Application" title="Application"/><span>1. Application</span></div>
         <div class="process-line line-1"></div>
-        <div class="round-step spin circle step-2"><img src="<?php print get_template_directory_uri(); ?>/library/images/pre-screen-icon.png" alt="Pre-Screening Committee" title="Pre-Screening Committee"/></div>
+        <div class="round-step spin circle step-2"><img src="<?php print get_template_directory_uri(); ?>/library/images/pre-screen-icon.png" alt="Pre-Screening Committee" title="Pre-Screening Committee"/><span>2. Pre-Screening<br>&nbsp;&nbsp;&nbsp;&nbsp;Committee</span></div>
         <div class="process-line line-2"></div>      
-        <div class="round-step spin circle step-3"><img src="<?php print get_template_directory_uri(); ?>/library/images/presentation-icon.png" alt="Presentation" title="Presentation"/></div>
+        <div class="round-step spin circle step-3"><img src="<?php print get_template_directory_uri(); ?>/library/images/presentation-icon.png" alt="Presentation" title="Presentation"/><span>3. Presentation</span></div>
         <div class="process-line line-3"></div>      
-        <div class="round-step spin circle step-4"><img src="<?php print get_template_directory_uri(); ?>/library/images/diligence-icon.png" alt="Diligence" title="Diligence"/></div>
+        <div class="round-step spin circle step-4"><img src="<?php print get_template_directory_uri(); ?>/library/images/diligence-icon.png" alt="Diligence" title="Diligence"/><span>4. Diligence</span></div>
         <div class="process-line line-4"></div>      
-        <div class="round-step spin circle step-5"><img src="<?php print get_template_directory_uri(); ?>/library/images/funding-icon.png" alt="Funding" title="Funding"/></div>
+        <div class="round-step spin circle step-5"><img src="<?php print get_template_directory_uri(); ?>/library/images/funding-icon.png" alt="Funding" title="Funding"/><span>5. Funding</span></div>
         <div class="process-line line-5"></div>      
-        <div class="round-step spin circle step-6"><img src="<?php print get_template_directory_uri(); ?>/library/images/growth-icon.png" alt="Growth" title="Growth"/></div>  
+        <div class="round-step spin circle step-6"><img src="<?php print get_template_directory_uri(); ?>/library/images/growth-icon.png" alt="Growth" title="Growth"/><span>6. Growth</span></div>  
       </div>                            
     </div>  
   </div>

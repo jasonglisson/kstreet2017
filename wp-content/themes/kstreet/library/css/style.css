@@ -6966,6 +6966,7 @@ body.overflow {
       display: block;
       float: right;
       font-size: 2rem;
+      position: relative;
       width: 200px;
       color: #00867f;
       transition: .3s all; }
@@ -6985,20 +6986,33 @@ body.overflow {
       margin-top: 23px; }
     .process .step-1 span {
       left: 217px;
-      position: relative;
       top: -47px; }
+    .process .step-1:hover span {
+      margin-right: 4px; }
   .process .step-2 {
     left: 143px;
     top: 166px; }
     .process .step-2 img {
       margin-left: 20px;
       margin-top: 29px; }
+    .process .step-2 span {
+      left: -144px;
+      top: -46px;
+      width: 250px; }
+    .process .step-2:hover span {
+      margin-right: -4px; }
   .process .step-3 {
     left: 628px;
     top: 52px; }
     .process .step-3 img {
       margin-left: 23px;
       margin-top: 30px; }
+    .process .step-3 span {
+      width: 250px;
+      right: -270px;
+      top: -53px; }
+    .process .step-3:hover span {
+      margin-right: 4px; }
   .process .step-4 {
     left: 513px;
     top: 283px; }
@@ -7047,7 +7061,7 @@ button, .round-step {
   background: none;
   border: 0;
   box-sizing: border-box;
-  box-shadow: inset 0 0 0 2px #00867f;
+  box-shadow: inset 0 0 0 2px #00b685;
   position: relative;
   vertical-align: middle; }
   button::before,
@@ -7064,7 +7078,7 @@ button, .round-step {
   height: 5em;
   padding: 0; }
   .spin:hover {
-    color: #00867f; }
+    color: #00b685; }
   .spin::before,
   .spin::after {
     top: 0;
@@ -7072,14 +7086,14 @@ button, .round-step {
   .spin::before {
     border: 2px solid transparent; }
   .spin:hover::before {
-    border-top-color: #00867f;
-    border-right-color: #00867f;
-    border-bottom-color: #00867f;
+    border-top-color: #00b685;
+    border-right-color: #00b685;
+    border-bottom-color: #00b685;
     transition: border-top-color 0.15s linear, border-right-color 0.15s linear 0.1s, border-bottom-color 0.15s linear 0.2s; }
   .spin::after {
     border: 0 solid transparent; }
   .spin:hover::after {
-    border-top: 2px solid #00867f;
+    border-top: 2px solid #00b685;
     border-left-width: 2px;
     border-right-width: 2px;
     transform: rotate(270deg);
