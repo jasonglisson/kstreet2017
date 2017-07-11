@@ -16,14 +16,14 @@ Template Name: Homepage
 	<div class="arrow show-for-medium-up"></div>
 </div> <!-- end #content -->
 <div class="about-us">
-	<div class="large-6 columns">
+	<div class="large-6 medium-12 columns">
   	<h1 class="raleway"><?php the_field('sub_section_header_1'); ?></h1>
   	<div class="about-text"><?php the_field('sub_section_text_1'); ?></div> 
   	<a href="<?php the_field('sub_section_button_link_1'); ?>" target="_blank" class="button hollow application-btn">View Our Portfolio</a>
 	</div>
-	<div class="large-6 columns"><img src="<?php the_field('sub_section_image_1'); ?>"></div>
-	<div class="large-6 columns"><img src="<?php the_field('sub_section_image_2'); ?>"></div>
-	<div class="large-6 columns">
+	<div class="large-6 medium-12 columns"><img src="<?php the_field('sub_section_image_1'); ?>"></div>
+	<div class="large-6 medium-12 columns"><img src="<?php the_field('sub_section_image_2'); ?>"></div>
+	<div class="large-6 medium-12 columns">
   	<h1 class="raleway"><?php the_field('sub_section_header_2'); ?></h1>
   	<div class="about-text"><?php the_field('sub_section_text_2'); ?></div>   
   	<a href="<?php the_field('sub_section_button_link_2'); ?>" target="_blank" class="button hollow application-btn">Meet Our Members</a>   	
@@ -51,9 +51,28 @@ Template Name: Homepage
 </div>  
 <div class="portfolio">
   <div class="row">
-    <h2 class="large-12 columns">Portfolio</h2>
+    <h1 class="large-12 columns">Portfolio</h1>
+    <?php 
+  
+    $posts = get_field('portfolio_grid');
+  
+    if( $posts ): ?>
+      <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+          <?php setup_postdata($post); ?>
+          <div class="large-4 columns portfolio-img">
+            <a href="<?php the_permalink(); ?>">
+              <img src="<?php the_field('investment_image', $post->ID);?>">
+            </a>
+          </div>
+      <?php endforeach; ?>
+      <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+      <?php endif; ?>
+    <a href="/portfolio" class="button hollow portfolio-btn">View All</a>   
   </div>
 </div> 
+<div class="members">
+  <h1 class="large-12 columns">Members</h1>
+</div>  
   
   
 <?php get_footer(); ?>
