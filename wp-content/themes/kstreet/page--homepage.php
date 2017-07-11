@@ -16,10 +16,16 @@ Template Name: Homepage
 	<div class="arrow show-for-medium-up"></div>
 </div> <!-- end #content -->
 <div class="about-us">
-	<div class="large-6 columns">what we do</div>
-	<div class="large-6 columns" style="background: #ddd;">picture</div>
-	<div class="large-6 columns" style="background: #ddd;">picture</div>
-	<div class="large-6 columns">who we are</div>  			  			
+	<div class="large-6 columns">
+  	<h1 class="raleway"><?php the_field('sub_section_header_1'); ?></h1>
+  	<div class="about-text"><?php the_field('sub_section_text_1'); ?></div> 
+	</div>
+	<div class="large-6 columns"><img src="<?php the_field('sub_section_image_1'); ?>"></div>
+	<div class="large-6 columns"><img src="<?php the_field('sub_section_image_2'); ?>"></div>
+	<div class="large-6 columns">
+  	<h1 class="raleway"><?php the_field('sub_section_header_2'); ?></h1>
+  	<div class="about-text"><?php the_field('sub_section_text_2'); ?></div>   	   	
+	</div>  			  			
 </div>	
 <div class="process">
   <div class="row">

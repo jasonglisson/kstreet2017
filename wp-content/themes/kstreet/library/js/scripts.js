@@ -61,7 +61,7 @@ jQuery(document).ready(function($) {
 	w.addEventListener( "devicemotion", checkTilt, false );
 })( this );
 
-$(function () {
+$(function() {
 
 	$('.mobile-menu-icon').click(function(){
 		$('.mobile-menu-icon').toggleClass('stuck');

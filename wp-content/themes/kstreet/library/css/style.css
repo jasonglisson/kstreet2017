@@ -6937,6 +6937,16 @@ body.overflow {
   padding: 2%;
   width: 100%;
   float: left; }
+  .about-us h1 {
+    color: #005576;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 2.5rem; }
+  .about-us .about-text {
+    margin: 0 4rem;
+    text-align: center; }
+    .about-us .about-text p {
+      font-size: 1.4rem; }
 
 .process {
   background: #f6f6f6;
