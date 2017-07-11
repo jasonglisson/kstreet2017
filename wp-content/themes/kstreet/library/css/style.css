@@ -6947,6 +6947,15 @@ body.overflow {
     text-align: center; }
     .about-us .about-text p {
       font-size: 1.4rem; }
+  .about-us .button {
+    border: 1px solid #b74a3e;
+    border-radius: 5px;
+    background: none;
+    color: #b74a3e;
+    margin: 0 auto;
+    display: block;
+    width: 35%;
+    font-size: 1.1rem; }
 
 .process {
   background: #f6f6f6;
