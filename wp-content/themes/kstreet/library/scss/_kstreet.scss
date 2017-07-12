@@ -750,9 +750,37 @@ button, .round-step {
     border: 1px solid #00557c;
     width: 100%;
     float: left; 
+    background: #00557c;
+    .left-contact {
+      padding: 2.5rem 0;
+      background: #fff;
+      h4 {
+        text-align: center;
+        color: #00557c;
+      }
+      .button {
+        border: 1px solid #b74a3e;
+        color: #b74a3e;
+        margin: 0.9375rem auto;
+        display: table;
+        width: 45%;
+        &:hover {
+          background: #b74a3e;
+          color: #fff;
+        }  
+      }
+      .linkedin {
+        text-align: center;
+        display: table;
+        color: #b74a3e;
+        border-bottom: 1px dotted #b74a3e;
+        margin: 0 auto;
+      }      
+    }
     .right-contact {
       background: #00557c;
       color: #fff;
+      padding: 1rem;
       h4 {
         color: #fff;
         text-align: center;

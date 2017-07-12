@@ -82,7 +82,11 @@ Template Name: Homepage
   <div class="row">
     <h1 class="large-12 columns">Contact</h1> 
       <div class="contact-box">
-        <div class="large-5 columns left-contact">test</div>
+        <div class="large-5 columns left-contact">
+          <h4 class="">Interested in learning more?</h4>  
+          <a href="/contact" class="button hollow contact-btn">Contact Us</a>
+          <a href="" target="_blank" class="linkedin">visit our LinkedIn page</a>        
+        </div>
         <div class="large-7 columns right-contact">
           <h4 class="">Follow Us on Twitter <a href="https://twitter.com/kstcapital" target="_blank">@KstCapital</a></h4>
         </div>

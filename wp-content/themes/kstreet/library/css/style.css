@@ -7204,10 +7204,33 @@ button, .round-step {
   .contact .contact-box {
     border: 1px solid #00557c;
     width: 100%;
-    float: left; }
+    float: left;
+    background: #00557c; }
+    .contact .contact-box .left-contact {
+      padding: 2.5rem 0;
+      background: #fff; }
+      .contact .contact-box .left-contact h4 {
+        text-align: center;
+        color: #00557c; }
+      .contact .contact-box .left-contact .button {
+        border: 1px solid #b74a3e;
+        color: #b74a3e;
+        margin: 0.9375rem auto;
+        display: table;
+        width: 45%; }
+        .contact .contact-box .left-contact .button:hover {
+          background: #b74a3e;
+          color: #fff; }
+      .contact .contact-box .left-contact .linkedin {
+        text-align: center;
+        display: table;
+        color: #b74a3e;
+        border-bottom: 1px dotted #b74a3e;
+        margin: 0 auto; }
     .contact .contact-box .right-contact {
       background: #00557c;
-      color: #fff; }
+      color: #fff;
+      padding: 1rem; }
       .contact .contact-box .right-contact h4 {
         color: #fff;
         text-align: center; }
