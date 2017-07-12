@@ -71,8 +71,24 @@ Template Name: Homepage
   </div>
 </div> 
 <div class="members">
-  <h1 class="large-12 columns">Members</h1>
-</div>  
+  <div class="row">
+    <h1 class="large-12 columns">Members</h1>
+    <div class="large-12 columns members-text"><?php the_field('members_text'); ?></div>
+    <a href="/members" class="button hollow member-btn">Meet Our Members</a>   
+    </div>
+  </div>  
+</div> 
+<div class="contact">
+  <div class="row">
+    <h1 class="large-12 columns">Contact</h1> 
+      <div class="contact-box">
+        <div class="large-5 columns left-contact">test</div>
+        <div class="large-7 columns right-contact">
+          <h4 class="">Follow Us on Twitter <a href="https://twitter.com/kstcapital" target="_blank">@KstCapital</a></h4>
+        </div>
+      </div>  
+  </div>
+</div>   
   
   
 <?php get_footer(); ?>

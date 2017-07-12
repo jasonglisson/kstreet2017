@@ -29,6 +29,14 @@ h3 {
 	text-transform: uppercase;
 }
 
+.button.hollow {
+  border-radius: 5px;
+  background: none;
+  display: table;
+  font-size: 1.1rem;
+  transition: .5s all;
+  text-align: center;
+}
 
 .top-title-wrap {
 	padding-top: 240px;
@@ -588,15 +596,10 @@ body.overflow {
   }
   .button {
     border: 1px solid #b74a3e;
-    border-radius: 5px;
-    background: none;
     color: #b74a3e;
     margin: 0.9375rem auto;
     display: table;
     width: 20%;
-    font-size: 1.1rem;
-    transition: .5s all;
-    text-align: center;
     top: 25px;
     &:hover {
       background: #b74a3e;
@@ -707,6 +710,58 @@ button, .round-step {
     font-weight: bold;
     text-align: center;
     color: #fff;
+    padding-bottom: 1rem;
+  }
+  .members-text {
+    p {
+      text-align: center;
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
+  }
+  .member-btn {
+    background: #fff;
+    border: 1px solid #fff;
+    color: #b74a3e;
+    margin: 0.9375rem auto 3rem auto;
+    display: table;
+    width: 19%;
+    top: 25px;
+    &:hover {
+      background: #b74a3e;
+      color: #fff;
+      border: 1px solid #b74a3e;
+    }    
+  }
+}
+
+.contact {
+  background: #fff;
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+  float: left;
+  width: 100%;
+  h1 {
+    color: #00557c;
+    margin-bottom: 1.7rem;
+  }
+  .contact-box {
+    border: 1px solid #00557c;
+    width: 100%;
+    float: left; 
+    .right-contact {
+      background: #00557c;
+      color: #fff;
+      h4 {
+        color: #fff;
+        text-align: center;
+        a {
+          color: #fff;
+          border-bottom: 1px dotted #fff;
+        }
+      }
+    }   
   }
 }
 

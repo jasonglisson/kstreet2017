@@ -6642,6 +6642,14 @@ h3 {
   margin: 0 0 10px 0;
   text-transform: uppercase; }
 
+.button.hollow {
+  border-radius: 5px;
+  background: none;
+  display: table;
+  font-size: 1.1rem;
+  transition: .5s all;
+  text-align: center; }
+
 .top-title-wrap {
   padding-top: 240px;
   padding-bottom: 145px;
@@ -7098,15 +7106,10 @@ body.overflow {
       transition: .5s all; }
   .portfolio .button {
     border: 1px solid #b74a3e;
-    border-radius: 5px;
-    background: none;
     color: #b74a3e;
     margin: 0.9375rem auto;
     display: table;
     width: 20%;
-    font-size: 1.1rem;
-    transition: .5s all;
-    text-align: center;
     top: 25px; }
     .portfolio .button:hover {
       background: #b74a3e;
@@ -7169,7 +7172,48 @@ button, .round-step {
   .members h1 {
     font-weight: bold;
     text-align: center;
-    color: #fff; }
+    color: #fff;
+    padding-bottom: 1rem; }
+  .members .members-text p {
+    text-align: center;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 300; }
+  .members .member-btn {
+    background: #fff;
+    border: 1px solid #fff;
+    color: #b74a3e;
+    margin: 0.9375rem auto 3rem auto;
+    display: table;
+    width: 19%;
+    top: 25px; }
+    .members .member-btn:hover {
+      background: #b74a3e;
+      color: #fff;
+      border: 1px solid #b74a3e; }
+
+.contact {
+  background: #fff;
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+  float: left;
+  width: 100%; }
+  .contact h1 {
+    color: #00557c;
+    margin-bottom: 1.7rem; }
+  .contact .contact-box {
+    border: 1px solid #00557c;
+    width: 100%;
+    float: left; }
+    .contact .contact-box .right-contact {
+      background: #00557c;
+      color: #fff; }
+      .contact .contact-box .right-contact h4 {
+        color: #fff;
+        text-align: center; }
+        .contact .contact-box .right-contact h4 a {
+          color: #fff;
+          border-bottom: 1px dotted #fff; }
 
 .press-content {
   overflow: hidden;
