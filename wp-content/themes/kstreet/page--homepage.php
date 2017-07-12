@@ -93,6 +93,30 @@ Template Name: Homepage
       </div>  
   </div>
 </div>   
+<div class="press">
+  <div class="row">
+    <h1 class="large-12 columns">Press</h1>
+    <div class="next">Next</div>
+    <div class="prev">Prev</div>
+    <div id="press-slider">
+      <?php
+    		$args = array( 'post_type' => 'press', 'posts_per_page' => -1 );
+    		$loop = new WP_Query( $args );
+    		while ( $loop->have_posts() ) : $loop->the_post(); ?>
+    		<div class="press-content large-4 end columns">
+    			<div class="press-source"><?php echo get_field('press_source'); ?></div>
+    			<div class="press-inner">
+    				<h5><?php the_date(); ?></h5>
+    				<a class="press-link-box" href="<?php echo get_field('press_link'); ?>" target="_blank"></a>
+    				<h4><a href="<?php echo get_field('press_link'); ?>" target="_blank"><?php the_title(); ?></a></h4>
+    				<div class="press-readmore"><a href="<?php echo get_field('press_link'); ?>">Read More</a></div>
+    			</div>	
+    		</div><?php
+    		endwhile;
+    	?>
+    </div>
+  </div>
+</div>  
   
   
 <?php get_footer(); ?>

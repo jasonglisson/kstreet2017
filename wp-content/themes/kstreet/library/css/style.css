@@ -7238,52 +7238,72 @@ button, .round-step {
           color: #fff;
           border-bottom: 1px dotted #fff; }
 
-.press-content {
-  overflow: hidden;
-  margin-bottom: 25px;
-  cursor: pointer; }
-  .press-content .press-source {
-    background: #006CAC;
-    padding: 10px 19px;
-    color: #FFFFFF; }
-  .press-content .press-inner {
-    background: #FFFFFF;
-    color: #858585;
-    padding: 20px;
-    border: 1px solid #A3A6A8;
-    font-family: "Lato", sans-serif;
-    height: 265px;
-    transition: .3s all;
-    overflow: hidden; }
-    .press-content .press-inner a.press-link-box {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      top: 0;
-      left: 0; }
-    .press-content .press-inner h4 {
-      font-size: 25px;
-      font-family: "Lato", sans-serif; }
-      .press-content .press-inner h4 a {
-        color: #8A8A8A; }
-    .press-content .press-inner h5 {
-      color: #A3A6A8; }
-    .press-content .press-inner .press-readmore {
-      position: absolute;
-      bottom: -40px;
-      width: 100%;
-      text-align: center;
-      left: 0;
-      transition: .2s all; }
-  .press-content:hover .press-inner {
-    background: #006CAC; }
-    .press-content:hover .press-inner h4 a {
-      color: #fff;
-      text-decoration: underline; }
-    .press-content:hover .press-inner .press-readmore {
-      bottom: 15px; }
-      .press-content:hover .press-inner .press-readmore a {
-        color: #fff; }
+.press {
+  background: #fff;
+  position: relative;
+  width: 100%;
+  float: left;
+  padding-bottom: 2rem; }
+  .press h1 {
+    color: #006898; }
+  .press .press-content {
+    overflow: hidden;
+    margin-bottom: 25px;
+    cursor: pointer; }
+    .press .press-content .press-source {
+      background: #006CAC;
+      padding: 10px 19px;
+      color: #FFFFFF; }
+    .press .press-content .press-inner {
+      background: #FFFFFF;
+      color: #858585;
+      padding: 20px;
+      border: 1px solid #A3A6A8;
+      font-family: "Lato", sans-serif;
+      height: 265px;
+      transition: .3s all;
+      overflow: hidden; }
+      .press .press-content .press-inner a.press-link-box {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0; }
+      .press .press-content .press-inner h4 {
+        font-size: 25px;
+        font-family: "Lato", sans-serif; }
+        .press .press-content .press-inner h4 a {
+          color: #8A8A8A; }
+      .press .press-content .press-inner h5 {
+        color: #A3A6A8; }
+      .press .press-content .press-inner .press-readmore {
+        position: absolute;
+        bottom: -40px;
+        width: 100%;
+        text-align: center;
+        left: 0;
+        transition: .2s all; }
+    .press .press-content:hover .press-inner {
+      background: #006CAC; }
+      .press .press-content:hover .press-inner h4 a {
+        color: #fff;
+        text-decoration: underline; }
+      .press .press-content:hover .press-inner .press-readmore {
+        bottom: 15px; }
+        .press .press-content:hover .press-inner .press-readmore a {
+          color: #fff; }
+  .press .slick-prev, .press .slick-next {
+    display: none !important;
+    visibility: hidden; }
+  .press .next, .press .prev {
+    position: absolute;
+    height: 155px;
+    width: 80px;
+    top: 50%; }
+  .press .prev {
+    left: 0; }
+  .press .next {
+    right: 0; }
 
 .kstreet-tweets {
   padding: 70px 0;

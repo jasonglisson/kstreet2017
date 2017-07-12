@@ -793,69 +793,94 @@ button, .round-step {
   }
 }
 
-.press-content {
-	overflow: hidden;
-	margin-bottom: 25px;
-	cursor: pointer;
-	.press-source {
-		background: #006CAC;
-		padding: 10px 19px;
-		color: #FFFFFF;
-	}
-	.press-inner {
-		background: #FFFFFF;
-		color: #858585;
-		padding: 20px;
-		border: 1px solid #A3A6A8;
-		font-family: $raleway;
-		height: 265px;		
-		transition:.3s all;
-		overflow: hidden;
-		a.press-link-box {
-			position: absolute;
-			height: 100%;
-			width: 100%;
-			top: 0;
-			left: 0;
-		}
-		h4 {
-			font-size: 25px;
-			font-family: $raleway;				
-			a {
-				color: #8A8A8A;
-			}
-		}
-		h5 {
-			color:#A3A6A8;
-		}
-		.press-readmore {
-			position: absolute;
-			bottom: -40px;
-			width: 100%;
-			text-align: center;
-			left: 0;
-			transition:.2s all;
-		}		
-	}
-	&:hover {
-		.press-inner {
-			background:#006CAC;
-			h4 {
-				a {
-					color:#fff;
-					text-decoration: underline;
-				}
-			}
-			.press-readmore {
-				bottom: 15px;
-				a {
-					color:#fff;
-				}
-			}			
-		}	
-	}
+.press {
+  background: #fff;
+  position: relative;
+  width: 100%;
+  float: left;
+  padding-bottom: 2rem;
+  h1 {
+    color: #006898;
+  }
+  .press-content {
+  	overflow: hidden;
+  	margin-bottom: 25px;
+  	cursor: pointer;
+  	.press-source {
+  		background: #006CAC;
+  		padding: 10px 19px;
+  		color: #FFFFFF;
+  	}
+  	.press-inner {
+  		background: #FFFFFF;
+  		color: #858585;
+  		padding: 20px;
+  		border: 1px solid #A3A6A8;
+  		font-family: $raleway;
+  		height: 265px;		
+  		transition:.3s all;
+  		overflow: hidden;
+  		a.press-link-box {
+  			position: absolute;
+  			height: 100%;
+  			width: 100%;
+  			top: 0;
+  			left: 0;
+  		}
+  		h4 {
+  			font-size: 25px;
+  			font-family: $raleway;				
+  			a {
+  				color: #8A8A8A;
+  			}
+  		}
+  		h5 {
+  			color:#A3A6A8;
+  		}
+  		.press-readmore {
+  			position: absolute;
+  			bottom: -40px;
+  			width: 100%;
+  			text-align: center;
+  			left: 0;
+  			transition:.2s all;
+  		}		
+  	}
+  	&:hover {
+  		.press-inner {
+  			background:#006CAC;
+  			h4 {
+  				a {
+  					color:#fff;
+  					text-decoration: underline;
+  				}
+  			}
+  			.press-readmore {
+  				bottom: 15px;
+  				a {
+  					color:#fff;
+  				}
+  			}			
+  		}	
+  	}
+  }
+  .slick-prev, .slick-next {
+    display: none !important;
+    visibility: hidden;
+  }
+  .next, .prev {
+    position: absolute;
+    height: 155px;
+    width: 80px;
+    top: 50%;
+  }
+  .prev {
+    left: 0;
+  }
+  .next {
+    right: 0;
+  }
 }
-
 .kstreet-tweets {
 	padding:70px 0;
 	background:url(../images/tweet-bg.jpg) center top no-repeat;

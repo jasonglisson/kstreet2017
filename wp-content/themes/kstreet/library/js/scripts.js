@@ -75,6 +75,22 @@ $(function() {
 		$(this).find('.press-link-box').attr('href');
 	});	
 
+  $('#press-slider').slick({
+		dots: false,
+		arrows: true,
+    slidesToShow: 3,
+    infinite: true,
+    slidesToScroll: 1		
+	});
+
+  $('.next').click(function(){
+    $('.slick-next')[0].click();  
+  });
+  
+  $('.prev').click(function(){
+    $('.slick-prev')[0].click();  
+  });  
+
 	//store the element
 	var $cache = $('.post-second-menu');
 	var $top = $('.back-to-top');

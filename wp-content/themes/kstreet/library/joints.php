@@ -121,15 +121,18 @@ function joints_scripts_and_styles() {
     
     // adding Foundation scripts file in the footer
     wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/bower_components/foundation/js/foundation.min.js', array( 'jquery' ), $theme_version, true );
-   
-    // register main stylesheet
-    wp_enqueue_style( 'joints-stylesheet', get_template_directory_uri() . '/library/css/style.css', array(), $theme_version, 'all' );
+
+    // adding Foundation scripts file in the footer
+    wp_enqueue_script( 'slick', get_template_directory_uri() . '/library/js/slick/slick.js', array( 'jquery' ), $theme_version, true );
     
     // register foundation icons
     wp_enqueue_style( 'foundation-icons', get_template_directory_uri() . '/library/css/icons/foundation-icons.css', array(), $theme_version, 'all' );
 
-	// kstreet styles
-    //wp_enqueue_style( 'kstreet', get_template_directory_uri() . '/library/css/kstreet.css', array(), $theme_version, 'all' );	
+    // register main stylesheet
+    wp_enqueue_style( 'slick-styles', get_template_directory_uri() . '/library/js/slick/slick.css', array(), $theme_version, 'all' );
+    
+    // register main stylesheet
+    wp_enqueue_style( 'joints-stylesheet', get_template_directory_uri() . '/library/css/style.css', array(), $theme_version, 'all' );    
 	
     // comment reply script for threaded comments
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
