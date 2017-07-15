@@ -28,12 +28,12 @@ Template Name: Contact
 			</div>
 			<div class="kstreet-tweets">
 				<div class="row">
-<div class="large-12 columns">
+          <div class="large-12 columns">
 						<h3>Recent K Street Tweets</h3>
 						<div class="header-line"></div>						
 							<?php include('Twitter.php'); ?>	
-							<div class="large-2 columns profile-pic"><a href="https://twitter.com/KStCapital" target="_blank"><img src="<?php echo $twitter_data[0]->user->profile_image_url ?>"></a></div>
-							<div class="large-10 columns tweet-wrap">
+<!-- 							<div class="large-2 columns profile-pic"><a href="https://twitter.com/KStCapital" target="_blank"><img src="<?php echo $twitter_data[0]->user->profile_image_url ?>"></a></div> -->
+							<div class="tweet-wrap">
 								<span class="date"><?php 
 /*
 									$date = new DateTime($twitter_data[0]->created_at);
@@ -46,11 +46,11 @@ Template Name: Contact
 								<div class="intents">
 									<span class="reply"><a target="_blank" href="https://twitter.com/intent/tweet?in_reply_to=<?php echo $twitter_data[0]->id; ?>"><i class="fi-arrow-left small"></i> Reply</a></span>
 									<span class="retweet"><a target="_blank" href="https://twitter.com/intent/retweet?tweet_id=<?php echo $twitter_data[0]->id; ?>"><i class="fi-loop small"></i> Retweet</a></span>					<span class="favorite"><a target="_blank" href="https://twitter.com/intent/favorite?tweet_id=<?php echo $twitter_data[0]->id; ?>"><i class="fi-star small"></i> Favorite</a></span>
-								</div>			
-							</div>						
-					</div>					
-				</div>	
-			</div>	
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
 			<div class="mailchimp-signup">
 				<div class="row">
 					<h3>K Street Newsletter Signup</h3>
