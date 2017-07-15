@@ -216,4 +216,23 @@ function add_search_to_nav( $items, $args ){
     return $items;
 }
 
+function twitter_code() {
+  include('Twitter.php');
+  ?>
+  <span class="date"><?php 
+  $date = new DateTime($twitter_data[0]->created_at);
+  $date->setTimezone(new DateTimeZone('America/New_York'));
+  $formatted_date = $date->format('M d');				
+  ?></span>			
+  <span class="tweet-text"><a href="https://twitter.com/KStCapital" target="_blank"><strong>@KstCapital</strong></a> <strong>&middot;</strong> <strong><?php echo $formatted_date; ?>:</strong> <?php echo linkify_tweet($twitter_data[0]->text); ?></span>
+  <div class="twitter-status-link"><a href="https://twitter.com/i/web/status/<?php echo $twitter_data[0]->id; ?>" target="_blank">https://twitter.com/i/web/status/<?php echo $twitter_data[0]->id; ?></a></div>
+  <div class="intents">
+  <!--
+  <span class="reply"><a target="_blank" href="https://twitter.com/intent/tweet?in_reply_to=<?php echo $twitter_data[0]->id; ?>"><i class="fi-arrow-left small"></i> Reply</a></span>
+  <span class="retweet"><a target="_blank" href="https://twitter.com/intent/retweet?tweet_id=<?php echo $twitter_data[0]->id; ?>"><i class="fi-loop small"></i> Retweet</a></span>					
+  <span class="favorite"><a target="_blank" href="https://twitter.com/intent/favorite?tweet_id=<?php echo $twitter_data[0]->id; ?>"><i class="fi-star small"></i> Favorite</a></span>
+  -->
+  </div><?php	
+}
+
 ?>

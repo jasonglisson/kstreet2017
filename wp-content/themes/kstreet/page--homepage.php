@@ -88,7 +88,11 @@ Template Name: Homepage
           <a href="" target="_blank" class="linkedin">visit our LinkedIn page</a>        
         </div>
         <div class="large-7 columns right-contact">
-          <h4 class="">Follow Us on Twitter <a href="https://twitter.com/kstcapital" target="_blank">@KstCapital</a></h4>
+          <h4 class="">Follow Us on Twitter <a href="https://twitter.com/KStCapital" target="_blank">@KstCapital</a></h4>
+<!-- 						<div class="large-2 columns profile-pic"><a href="https://twitter.com/KStCapital" target="_blank"><img src="<?php echo $twitter_data[0]->user->profile_image_url ?>"></a></div> -->
+						<div class="large-12 columns tweet-wrap">
+  						<?php twitter_code(); ?>		
+						</div>	          
         </div>
       </div>  
   </div>
