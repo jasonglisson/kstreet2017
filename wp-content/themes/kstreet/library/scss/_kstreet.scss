@@ -34,7 +34,7 @@ h3 {
   background: none;
   display: table;
   font-size: 1.1rem;
-  transition: .5s all;
+  transition: .2s all;
   text-align: center;
 }
 
@@ -881,11 +881,7 @@ button, .round-step {
     right: 0;
   }
 }
-.kstreet-tweets {
-	padding:70px 0;
-	background:url(../images/tweet-bg.jpg) center top no-repeat;
-	background-size:cover;
-	box-shadow: inset 0 0 210px rgba(0, 0, 0, 0.94);
+.tweet-wrap {
 	h3 {
 		color:#fff;
 	}
@@ -893,14 +889,22 @@ button, .round-step {
 		background: #fff;
 	}
 	.tweet-text {
-		float:left;
-		margin-top:10px;
-		font-style: italic;
-		width:100%;		
+    float: left;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 1.1rem;
+    line-height: 2rem;		
 		a {
 			color: #FFFFFF;
-			border-bottom:1px dotted #ddd;
 		}
+	}
+	.twitter-status-link {
+  	a {
+  		color: #FFFFFF;
+  		border-bottom:1px dotted #ddd;  
+      font-size: 1.1rem;
+      line-height: 2rem;			
+    }
 	}
 	.tweet-wrap {
 		border-left:2px solid #ddd;
