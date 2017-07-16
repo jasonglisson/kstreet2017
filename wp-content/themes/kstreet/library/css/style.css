@@ -7208,7 +7208,8 @@ button, .round-step {
     background: #00557c; }
     .contact .contact-box .left-contact {
       padding: 2.5rem 0;
-      background: #fff; }
+      background: #fff;
+      display: grid; }
       .contact .contact-box .left-contact h4 {
         text-align: center;
         color: #00557c; }
@@ -7296,14 +7297,17 @@ button, .round-step {
     display: none !important;
     visibility: hidden; }
   .press .next, .press .prev {
-    position: absolute;
     height: 155px;
     width: 80px;
-    top: 50%; }
+    top: 50%;
+    z-index: 2;
+    background: #00b685; }
   .press .prev {
-    left: 0; }
+    left: 0;
+    position: absolute; }
   .press .next {
-    right: 0; }
+    right: 0;
+    position: absolute; }
 
 .tweet-wrap h3 {
   color: #fff; }
