@@ -754,6 +754,7 @@ button, .round-step {
     .left-contact {
       padding: 2.5rem 0;
       background: #fff;
+      display: grid;
       h4 {
         text-align: center;
         color: #00557c;
@@ -869,18 +870,22 @@ button, .round-step {
     visibility: hidden;
   }
   .next, .prev {
-    position: absolute;
     height: 155px;
     width: 80px;
     top: 50%;
+    z-index: 2;
+    background: #00b685;
   }
   .prev {
     left: 0;
+    position: absolute; 
   }
   .next {
     right: 0;
+    position: absolute; 
   }
 }
+
 .tweet-wrap {
 	h3 {
 		color:#fff;
