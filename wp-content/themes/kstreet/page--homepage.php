@@ -98,10 +98,11 @@ Template Name: Homepage
   </div>
 </div>   
 <div class="press">
+  <div class="next">Next</div>
+<!--   <div class="prev">Prev</div> -->
   <div class="row">
     <h1 class="large-12 columns">Press</h1>
-    <div class="next">Next</div>
-    <div class="prev">Prev</div>
+  </div>  
     <div id="press-slider">
       <?php
     		$args = array( 'post_type' => 'press', 'posts_per_page' => -1 );
@@ -119,7 +120,6 @@ Template Name: Homepage
     		endwhile;
     	?>
     </div>
-  </div>
 </div>  
   
   
