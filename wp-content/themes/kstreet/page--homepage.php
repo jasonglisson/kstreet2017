@@ -108,7 +108,7 @@ Template Name: Homepage
     		$args = array( 'post_type' => 'press', 'posts_per_page' => -1 );
     		$loop = new WP_Query( $args );
     		while ( $loop->have_posts() ) : $loop->the_post(); ?>
-    		<div class="press-content large-4 end columns">
+    		<div class="press-content large-5 end columns">
     			<div class="press-source"><?php echo get_field('press_source'); ?></div>
     			<div class="press-inner">
     				<h5><?php the_date(); ?></h5>

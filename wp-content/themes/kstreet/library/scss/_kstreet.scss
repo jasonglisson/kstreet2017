@@ -807,16 +807,16 @@ button, .round-step {
   	overflow: hidden;
   	margin-bottom: 25px;
   	cursor: pointer;
+  	padding-left: 70px;
   	.press-source {
-  		background: #006CAC;
+  		background: #7f7f7f;
   		padding: 10px 19px;
   		color: #FFFFFF;
   	}
   	.press-inner {
-  		background: #FFFFFF;
+  		background: #f6f6f6;
   		color: #858585;
   		padding: 20px;
-  		border: 1px solid #A3A6A8;
   		font-family: $raleway;
   		height: 265px;		
   		transition:.3s all;
@@ -872,7 +872,7 @@ button, .round-step {
   .next, .prev {
     height: 155px;
     width: 80px;
-    top: 50%;
+    top: 35%;
     z-index: 2;
     background: #00b685;
   }
