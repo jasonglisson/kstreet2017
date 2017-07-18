@@ -7054,18 +7054,36 @@ body.overflow {
     .process .step-4 img {
       margin-left: 25px;
       margin-top: 23px; }
+    .process .step-4 span {
+      width: 200px;
+      left: -112px;
+      top: -45px; }
+    .process .step-4:hover span {
+      margin-right: -4px; }
   .process .step-5 {
     left: 933px;
     top: 169px; }
     .process .step-5 img {
       margin-left: 34px;
       margin-top: 19px; }
+    .process .step-5 span {
+      width: 170px;
+      right: -199px;
+      top: -61px; }
+    .process .step-5:hover span {
+      margin-right: 4px; }
   .process .step-6 {
     left: 818px;
     top: 345px; }
     .process .step-6 img {
       margin-left: 20px;
       margin-top: 23px; }
+    .process .step-6 span {
+      width: 153px;
+      top: -48px;
+      left: -138px; }
+    .process .step-6:hover span {
+      margin-right: -4px; }
   .process .line-1, .process .line-3, .process .line-5 {
     -ms-transform: rotate(90deg);
     /* IE 9 */
@@ -7091,6 +7109,25 @@ body.overflow {
     left: 938px;
     top: 484px;
     width: 100px; }
+
+.process-button-area {
+  background: #f6f6f6;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  margin-bottom: 35px; }
+  .process-button-area .process-btn {
+    margin: 0 auto 15px auto;
+    background: #b74a3e;
+    border: 1px solid #b74a3e;
+    color: #fff;
+    transition: .2s all; }
+    .process-button-area .process-btn:hover {
+      background: rgba(184, 75, 63, 0);
+      color: #b74a3e; }
+  .process-button-area .learn-more {
+    color: #b74a3e;
+    text-decoration: underline; }
 
 .portfolio {
   background: #fff;

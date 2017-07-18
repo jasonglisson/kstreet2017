@@ -528,7 +528,17 @@ body.overflow {
     img {
       margin-left: 25px;
       margin-top: 23px;     
-    }       
+    }      
+    span {
+      width: 200px;
+      left: -112px;
+      top: -45px;      
+    } 
+    &:hover {
+      span {
+        margin-right: -4px;
+      }
+    }
   }
   .step-5 {
     left: 933px;
@@ -536,7 +546,17 @@ body.overflow {
     img {
       margin-left: 34px;
       margin-top: 19px;     
-    }      
+    }  
+    span {
+      width: 170px;
+      right: -199px;
+      top: -61px;      
+    }    
+    &:hover {
+      span {
+        margin-right: 4px;
+      }
+    }
   }
   .step-6 {
     left: 818px;
@@ -544,7 +564,17 @@ body.overflow {
     img {
       margin-left: 20px;
       margin-top: 23px;      
-    }       
+    }  
+    span {
+      width: 153px;
+      top: -48px;
+      left: -138px;      
+    }
+    &:hover {
+      span {
+        margin-right: -4px;
+      }
+    }
   }
   .line-1, .line-3, .line-5 {
     -ms-transform: rotate(90deg); /* IE 9 */
@@ -574,6 +604,28 @@ body.overflow {
     left: 938px;
     top: 484px;
     width: 100px;    
+  }
+}
+.process-button-area {
+   background: #f6f6f6;
+   padding-top: 30px;
+   padding-bottom: 30px;
+   text-align: center;
+   margin-bottom: 35px;
+  .process-btn {
+    margin: 0 auto 15px auto;
+    background: #b74a3e;
+    border: 1px solid #b74a3e;
+    color: #fff;
+    transition: .2s all;
+    &:hover {
+      background: rgba(184, 75, 63, 0);
+      color: #b74a3e;
+    }
+  }
+  .learn-more {
+    color: #b74a3e;
+    text-decoration: underline;
   }
 }
 
