@@ -45,10 +45,16 @@ Template Name: Homepage
         <div class="round-step spin circle step-5"><img src="<?php print get_template_directory_uri(); ?>/library/images/funding-icon.png" alt="Funding" title="Funding"/><span>5. Funding</span></div>
         <div class="process-line line-5"></div>      
         <div class="round-step spin circle step-6"><img src="<?php print get_template_directory_uri(); ?>/library/images/growth-icon.png" alt="Growth" title="Growth"/><span>6. Growth</span></div>  
-      </div>                            
+      </div>          
     </div>  
   </div>
-</div>  
+</div> 
+<div class="large-12 columns process-button-area">
+  <div class="row">
+    <a href="<?php the_field('application_link', 'option'); ?>" class="button hollow process-btn" target="_blank">Submit Application</a> 
+    <a href="/investment-process" class="learn-more">learn more</a>
+  </div>
+</div> 
 <div class="portfolio">
   <div class="row">
     <h1 class="large-12 columns">Portfolio</h1>
