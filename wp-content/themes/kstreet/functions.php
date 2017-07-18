@@ -212,8 +212,8 @@ function app_link() {
 add_filter( 'wp_nav_menu_items', 'add_search_to_nav', 10, 2 );
 
 function add_search_to_nav( $items, $args ){
-    $items .= '<li><a href="' . app_link() .  '" target="_blank" class="button application-btn">Submit Application</a></li>';
-    return $items;
+  $items .= '<li><a href="' . app_link() .  '" target="_blank" class="button application-btn">Submit Application</a></li>';
+  return $items;
 }
 
 function twitter_code() {
