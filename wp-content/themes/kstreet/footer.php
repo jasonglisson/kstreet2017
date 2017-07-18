@@ -3,25 +3,23 @@
 					</div>
 					<footer class="footer" role="contentinfo">
 						<div class="row">
-							<div class="large-6 columns footer-logo">
-								<img src="<?php echo get_template_directory_uri(); ?>/library/images/kstreet-bw.png">
-							</div>
 							<div class="large-3 columns">
-								<h4>Links</h4>
 								<?php joints_footer_links(); ?>
+							</div>  						
+							<div class="large-6 columns footer-logo">
+								<a href="/"><img src="<?php echo get_template_directory_uri(); ?>/library/images/logo.png"></a>
 							</div>
-							<div class="large-3 columns">
-								<h4>Social</h4>
-
+							<div class="large-3 columns right-links">
+  							<div class="">
+    							<a href="<?php the_field('application_link', 'option'); ?>" target="_blank">Member Login</a>
+  							</div>
+  							<div class="social">
+  								<a href="#" target="_blank">Facebook</a>
+  								<a href="#" target="_blank">Twitter</a>				
+  							</div>				
+                <div class="copyright">&copy; <?php echo date('Y'); ?></div>
 							</div>														
-						</div>
-				        <div class="copy-wrap">
-				        	<div class="row">
-								<div class="large-12 medium-12 columns">
-									<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</p>
-								</div>	
-				        	</div>			     
-				        </div>   
+						</div>  
 					</footer> <!-- end .footer -->
 
 				</div> <!-- end #container -->
