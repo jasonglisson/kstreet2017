@@ -7671,7 +7671,7 @@ button, .round-step {
 /* Footer */
 footer {
   margin-top: 0 !important;
-  padding: 40px 0 0 0;
+  padding: 40px 0;
   background: #d7d7d7;
   color: #1a1a1a; }
   footer h4 {
@@ -7704,6 +7704,8 @@ footer {
       color: #1a1a1a; }
       footer .sub-nav li a:hover {
         color: #1a1a1a; }
+  footer .sub-nav li:last-of-type {
+    display: none; }
   footer .sub-nav li.active a {
     border-radius: 3px;
     font-weight: 300;
@@ -7715,10 +7717,24 @@ footer {
     footer .sub-nav li.active a:hover {
       background: none;
       cursor: pointer; }
+  footer .social {
+    display: block;
+    width: 45px;
+    height: 33px;
+    float: right;
+    margin: 2rem 0 0.5rem 1rem;
+    text-indent: -9999px;
+    color: rgba(255, 255, 255, 0); }
+  footer .linkedin {
+    background: url(../images/linkedin.png) no-repeat; }
+  footer .twitter {
+    background: url(../images/twitter.png) no-repeat; }
 
 .copyright {
-  text-align: center;
-  padding-top: 20px; }
+  text-align: right;
+  padding-top: 20px;
+  width: 100%;
+  float: left; }
 
 /* Application Form */
 .page-template-page--application #content {

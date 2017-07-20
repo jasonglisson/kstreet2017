@@ -1336,7 +1336,7 @@ button, .round-step {
 /* Footer */
 footer {
   margin-top: 0 !important;
-  padding: 40px 0 0 0;
+  padding: 40px 0;
   background: #d7d7d7;
   color: #1a1a1a;
   h4 {
@@ -1379,6 +1379,9 @@ footer {
       	}
       }
     }
+    li:last-of-type {
+      display: none;
+    }
     li.active a {
       border-radius: 3px;
       font-weight: 300;
@@ -1393,10 +1396,27 @@ footer {
       }
     }			
   }
+  .social {
+    display: block;
+    width: 45px;
+    height: 33px;
+    float: right; 
+    margin: 2rem 0 .5rem 1rem; 
+    text-indent: -9999px; 
+    color: rgba(255, 255, 255, 0); 
+  }
+  .linkedin {
+    background: url(../images/linkedin.png) no-repeat;
+  }
+  .twitter {
+    background: url(../images/twitter.png) no-repeat;   
+  }
 }
 .copyright {
-	text-align: center;
-	padding-top:20px;
+  text-align: right;
+  padding-top: 20px;
+  width: 100%;
+  float: left;
 }
 
 /* Application Form */

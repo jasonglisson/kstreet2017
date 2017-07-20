@@ -13,9 +13,9 @@
   							<div class="">
     							<a href="<?php the_field('application_link', 'option'); ?>" target="_blank">Member Login</a>
   							</div>
-  							<div class="social">
-  								<a href="#" target="_blank">Facebook</a>
-  								<a href="#" target="_blank">Twitter</a>				
+  							<div class="social-group">
+  								<a href="#" target="_blank" class="twitter social">Twitter</a>    							
+  								<a href="#" target="_blank" class="linkedin social">LinkedIn</a>				
   							</div>				
                 <div class="copyright">&copy; <?php echo date('Y'); ?></div>
 							</div>														
