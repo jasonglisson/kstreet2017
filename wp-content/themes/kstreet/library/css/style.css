@@ -7499,7 +7499,10 @@ button, .round-step {
     .page-template-page--investments .port-menu li a {
       color: #af3e42;
       width: 100%;
-      display: block; }
+      display: block;
+      transition: .3s all; }
+      .page-template-page--investments .port-menu li a:hover {
+        color: #00557c; }
   .page-template-page--investments .port-menu li:last-child {
     border-bottom: none; }
 
