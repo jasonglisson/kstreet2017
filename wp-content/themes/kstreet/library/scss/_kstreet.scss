@@ -1104,9 +1104,59 @@ button, .round-step {
 		background: #fff;
 	}
 	.investments {
-		padding: 45px 0;
+  	padding-left: 40px;
 		display: block;
 		margin: 0 auto;
+		h2 {
+  		width:100%;
+		}
+    .port-cat-list {
+      list-style-type: none;
+      margin: 0 0 25px 0;
+      transition: .3s all;
+      display: table;
+      width: 100%;
+    	li.portfolio-item {
+        list-style-type: none;
+        position: relative;
+        transition: .3s all;
+        img {
+          width: 255px;
+          height: 160px;
+          border: 2px solid #808080;
+        }
+        .inner-port-wrap {
+          position: absolute;
+          top: -9px;
+          left: 6px;
+          display: none;
+          transition: .3s all;
+          border: 9px solid #7f7f7f;
+          background: #7f7f7f;
+          z-index: 2;
+          box-shadow: 0 0 8px 0px #000;
+          h5 {
+            padding: 5px 3px;
+            color: #fff;
+            a {
+              font-size: .8rem;
+              color: #fff;
+              text-decoration: underline;
+            }
+          }
+          img {
+            background: #fff;
+          }
+        }
+        &:hover {
+          .inner-port-wrap {
+            display: block;
+            color: #fff;
+            transition: .3s all;
+          }
+        }	
+    	}
+  	}		
 	}
 	.invest {
 		padding:30px 15px;
