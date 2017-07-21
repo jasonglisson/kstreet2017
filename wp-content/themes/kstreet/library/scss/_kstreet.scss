@@ -1127,6 +1127,10 @@ button, .round-step {
         color: #af3e42;
         width: 100%;
         display: block;
+        transition: .3s all;
+        &:hover {
+          color: #00557c;
+        }
       }
     }
     li:last-child {
