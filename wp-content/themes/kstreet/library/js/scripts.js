@@ -158,4 +158,12 @@ $(function() {
 		viewport_height();
 	});    
 	
+	$('.port-menu a').click(function() {
+  	var portLink = $(this).attr('href');
+  	//alert(portLink);
+    $('html, body').animate({
+      scrollTop: $(portLink).offset().top-100
+    }, 900);
+	});
+	
 });
