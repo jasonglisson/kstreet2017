@@ -7506,9 +7506,10 @@ button, .round-step {
         border: 9px solid #7f7f7f;
         background: #7f7f7f;
         z-index: 2;
-        box-shadow: 0 0 8px 0px #000; }
+        width: 274px; }
         .page-template-page--investments .investments .port-cat-list li.portfolio-item .inner-port-wrap h5 {
           padding: 5px 3px;
+          margin-bottom: 0;
           color: #fff; }
           .page-template-page--investments .investments .port-cat-list li.portfolio-item .inner-port-wrap h5 a {
             font-size: .8rem;
@@ -7516,6 +7517,11 @@ button, .round-step {
             text-decoration: underline; }
         .page-template-page--investments .investments .port-cat-list li.portfolio-item .inner-port-wrap img {
           background: #fff; }
+        .page-template-page--investments .investments .port-cat-list li.portfolio-item .inner-port-wrap .blurb {
+          font-size: .75rem;
+          padding-left: 4px;
+          line-height: 1.5rem;
+          padding-bottom: 1rem; }
       .page-template-page--investments .investments .port-cat-list li.portfolio-item:hover .inner-port-wrap {
         display: block;
         color: #fff;
@@ -7544,6 +7550,9 @@ button, .round-step {
         color: #00557c; }
   .page-template-page--investments .port-menu li:last-child {
     border-bottom: none; }
+
+.page-template-page--investments footer {
+  margin-top: 190px; }
 
 /* Members */
 .page-template-page--members .inner-wrap {
@@ -7691,7 +7700,7 @@ button, .round-step {
 
 /* Footer */
 footer {
-  margin-top: 0 !important;
+  margin-top: 0;
   padding: 40px 0;
   background: #d7d7d7;
   color: #1a1a1a; }
