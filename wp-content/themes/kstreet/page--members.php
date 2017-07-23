@@ -6,14 +6,13 @@ Template Name: Members
 
 <?php get_header(); ?>
 			
-			<div class="top-title-wrap">
-				<div id="inner-content" class="row">
-				    <div id="main" class="large-12 columns first" role="main">
-						<h1 class="page-title"><?php echo get_the_title(); ?></h1>					
-				    </div> <!-- end #main -->
-				</div> <!-- end #inner-content -->
-				<div class="overlay"></div>
-			</div> <!-- end #content -->
+    	<div class="top-title-wrap">
+    		<div id="inner-content" class="row">
+    	    <div class="large-12 columns title-wrap first" role="main">
+    			  <h1 class="page-title"><?php echo get_the_title(); ?></h1>					
+    	    </div> <!-- end .title-wrap -->
+    		</div> <!-- end #inner-content -->
+    	</div> <!-- end .top-title-wrap -->
 			<div class="inner-wrap">
 				<div class="row">
 					<div class="large-12 columns content">
