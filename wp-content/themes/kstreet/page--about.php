@@ -6,14 +6,13 @@ Template Name: About
 
 <?php get_header(); ?>
 			
-			<div id="about-wrap" class="top-title-wrap">
-				<div id="inner-content" class="row">
-				    <div id="main" class="large-12 columns first" role="main">
-						<h1 class="page-title"><?php echo get_the_title(); ?></h1>					
-				    </div> <!-- end #main -->
-				</div> <!-- end #inner-content -->
-				<div class="overlay"></div>
-			</div> <!-- end #content -->
+    	<div class="top-title-wrap">
+    		<div id="inner-content" class="row">
+    	    <div class="large-12 columns title-wrap first" role="main">
+    			  <h1 class="page-title"><?php echo get_the_title(); ?></h1>					
+    	    </div> <!-- end .title-wrap -->
+    		</div> <!-- end #inner-content -->
+    	</div> <!-- end .top-title-wrap -->
 			<div class="who-what">
 				<div class="row">
 					<div class="large-6 medium-6 small-12 columns who-we-are">
