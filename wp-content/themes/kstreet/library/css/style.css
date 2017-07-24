@@ -7443,24 +7443,31 @@ button, .round-step {
         color: #7D8ED2; }
 
 /* About */
-#about-wrap {
+.page-template-page--about .process-item {
+  background: #f6f6f6; }
+  .page-template-page--about .process-item hr {
+    width: 97%;
+    margin: 0 auto;
+    border-width: 1px; }
+
+.page-template-page--about #about-wrap {
   padding-top: 240px;
   padding-bottom: 145px;
   background: url(../images/kstreet-a.jpg) no-repeat;
   background-size: cover; }
 
-.who-what {
+.page-template-page--about .who-what {
   padding: 35px 0; }
-  .who-what h3 {
+  .page-template-page--about .who-what h3 {
     font-family: "Lato", sans-serif;
     text-transform: uppercase; }
-  .who-what .who-we-are, .who-what .what-we-do {
+  .page-template-page--about .who-what .who-we-are, .page-template-page--about .who-what .what-we-do {
     padding: 30px; }
 
-.process-heading {
+.page-template-page--about .process-heading {
   background: #006CAC;
   padding: 30px 0; }
-  .process-heading h3 {
+  .page-template-page--about .process-heading h3 {
     color: #fff;
     text-align: center;
     font-family: "Lato", sans-serif;
