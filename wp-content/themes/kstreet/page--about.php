@@ -13,53 +13,36 @@ Template Name: About
     	    </div> <!-- end .title-wrap -->
     		</div> <!-- end #inner-content -->
     	</div> <!-- end .top-title-wrap -->
-			<div class="who-what">
-				<div class="row">
-					<div class="large-6 medium-6 small-12 columns who-we-are">
-						<h3>Who we are</h3>
-						<div class="header-line"></div>							
-						<?php the_field('who_we_are'); ?>
-					</div>
-					<div class="large-6 medium-6 small-12 columns what-we-do">
-						<h3>What we do</h3>
-						<div class="header-line"></div>							
-						<?php the_field('what_we_do'); ?>
-					</div>					
-				</div>
-			</div>
-			<div id="our-process"></div>
-			<div class="process-heading">
-				<div class="row">
-					<div class="large-12 columns">
-						<h3>Our Investment Process</h3>
-					</div>
-				</div>
-			</div>
-			<div class="process">
+			<div class="process-list">
 				<?php if( have_rows('process') ): ?>
-
-
 
 					<?php while( have_rows('process') ): the_row(); 
 					
 						// vars
 						$icon = get_sub_field('icon');
+						$image = get_sub_field('process_image');
 						$process_title = get_sub_field('process_title');
 						$process_text = get_sub_field('process_text');
 					
 						?>
+						<div class="process-wrap">
 						<div class="process-item row">
 							<div class="large-2 medium-2 columns process-icons">
-								<?php echo $icon; ?>
+  							<?php if($image): ?>
+  							  <img src="<?php echo $image; ?>" />
+  							<?php else: ?>  
+								  <?php echo $icon; ?>
+							  <?php endif; ?>  
+								
 							</div>
 							<div class="large-10 medium-10 columns process-info">
 								<h3><?php echo $process_title; ?></h3>
 								<div class="process-text"><?php echo $process_text; ?></div>
 							</div>
+							<hr>
+						</div>
 						</div>
 					<?php endwhile; ?>
-					
-
 				
 				<?php endif; ?>
 			</div>
