@@ -7449,6 +7449,17 @@ button, .round-step {
     width: 97%;
     margin: 0 auto;
     border-width: 1px; }
+  .page-template-page--about .process-item .process-icons .icon-wrap {
+    font-size: 4rem;
+    border-radius: 50%;
+    border: 1px solid #a3a3a3;
+    background: #fff;
+    width: 110px;
+    height: 110px;
+    text-align: center; }
+
+.page-template-page--about .process-wrap:last-of-type hr {
+  display: none; }
 
 .page-template-page--about #about-wrap {
   padding-top: 240px;
