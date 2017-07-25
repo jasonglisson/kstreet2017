@@ -1066,6 +1066,22 @@ button, .round-step {
       margin: 0 auto;
       border-width: 1px;      
     }
+    .process-icons {
+      .icon-wrap {
+        font-size: 4rem;
+        border-radius: 50%;
+        border:1px solid #a3a3a3;
+        background: #fff;
+        width: 110px;
+        height: 110px;        
+        text-align: center;
+      }
+    }
+  }
+  .process-wrap:last-of-type {
+    hr {
+     display: none; 
+    }
   }
   #about-wrap {
   	padding-top: 240px;
