@@ -7445,6 +7445,8 @@ button, .round-step {
 /* About */
 .page-template-page--about .process-item {
   background: #f6f6f6; }
+  .page-template-page--about .process-item .process-info {
+    padding-top: 25px; }
   .page-template-page--about .process-item hr {
     width: 97%;
     margin: 0 auto;
@@ -7456,11 +7458,23 @@ button, .round-step {
     background: #fff;
     width: 110px;
     height: 110px;
-    text-align: center; }
+    text-align: center;
+    margin: 1.5rem auto; }
     .page-template-page--about .process-item .process-icons .icon-wrap i {
-      color: #a3a3a3; }
+      color: #a3a3a3;
+      position: relative; }
 
-.page-template-page--about .process-wrap:last-of-type hr {
+.page-template-page--about .process-btn {
+  margin: 18px auto 15px auto;
+  background: #b74a3e;
+  border: 1px solid #b74a3e;
+  color: #fff;
+  transition: .2s all; }
+  .page-template-page--about .process-btn:hover {
+    background: rgba(184, 75, 63, 0);
+    color: #b74a3e; }
+
+.page-template-page--about .process-wrap.process-6 hr {
   display: none; }
 
 .page-template-page--about #about-wrap {
@@ -7485,6 +7499,27 @@ button, .round-step {
     text-align: center;
     font-family: "Lato", sans-serif;
     text-transform: uppercase; }
+
+.page-template-page--about .process-1 i {
+  font-size: 4.5rem;
+  top: -3px;
+  left: -5px; }
+
+.page-template-page--about .process-2 i {
+  font-size: 4.7rem;
+  top: -2px; }
+
+.page-template-page--about .process-3 i {
+  font-size: 4.7rem;
+  top: -2px; }
+
+.page-template-page--about .process-4 i {
+  top: 4px; }
+
+.page-template-page--about .process-5 .process-item .icon-wrap {
+  font-size: 5rem; }
+  .page-template-page--about .process-5 .process-item .icon-wrap i {
+    top: -6px; }
 
 .top-title-wrap {
   position: relative; }

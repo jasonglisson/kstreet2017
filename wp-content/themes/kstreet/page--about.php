@@ -48,5 +48,10 @@ Template Name: About
 					<?php endwhile; ?>
 				
 				<?php endif; ?>
+				<div class="process-wrap">
+  				<div class="process-item row">
+            <a href="<?php the_field('application_link', 'option'); ?>" class="button hollow process-btn" target="_blank">Submit Application</a> 
+  				</div>	
+				</div>
 			</div>
 <?php get_footer(); ?>

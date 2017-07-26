@@ -1061,6 +1061,9 @@ button, .round-step {
 .page-template-page--about {
   .process-item {
     background: #f6f6f6;
+    .process-info {
+      padding-top: 25px;
+    }
     hr {
       width: 97%;
       margin: 0 auto;
@@ -1075,13 +1078,26 @@ button, .round-step {
         width: 110px;
         height: 110px;        
         text-align: center;
+        margin: 1.5rem auto;
         i {
           color: #a3a3a3;
+          position: relative;
         }
       }
     }
   }
-  .process-wrap:last-of-type {
+  .process-btn {
+    margin: 18px auto 15px auto;
+    background: #b74a3e;
+    border: 1px solid #b74a3e;
+    color: #fff;
+    transition: .2s all;
+    &:hover {
+      background: rgba(184, 75, 63, 0);
+      color: #b74a3e;
+    }
+  }
+  .process-wrap.process-6 {
     hr {
      display: none;
     }
@@ -1111,7 +1127,41 @@ button, .round-step {
   		font-family: $raleway;	
   		text-transform: uppercase;	
   	}
-  }  
+  }
+  .process-1 {
+    i {
+      font-size: 4.5rem;
+      top: -3px;
+      left: -5px;      
+    }
+  }
+  .process-2 {
+    i {
+      font-size: 4.7rem;
+      top: -2px;      
+    }
+  }
+  .process-3 {
+    i {
+      font-size: 4.7rem;
+      top: -2px;
+    }
+  }
+  .process-4 {
+    i {
+      top: 4px;
+    }
+  }
+  .process-5 {
+    .process-item {
+      .icon-wrap {
+        font-size: 5rem; 
+        i {
+          top: -6px;
+        }     
+      }
+    }
+  }   
 }
 
 .top-title-wrap {
