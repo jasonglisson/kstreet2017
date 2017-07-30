@@ -7465,7 +7465,7 @@ button, .round-step {
       position: relative; }
 
 .page-template-page--about .process-btn {
-  margin: 18px auto 15px auto;
+  margin: 18px auto 35px auto;
   background: #b74a3e;
   border: 1px solid #b74a3e;
   color: #fff;
@@ -7499,6 +7499,12 @@ button, .round-step {
     text-align: center;
     font-family: "Lato", sans-serif;
     text-transform: uppercase; }
+
+.page-template-page--about .process-title {
+  padding-top: 3.6rem; }
+  .page-template-page--about .process-title h3 {
+    color: #107c89;
+    text-transform: none; }
 
 .page-template-page--about .process-1 i {
   font-size: 4.5rem;
@@ -7622,27 +7628,38 @@ button, .round-step {
     text-transform: none; }
 
 .page-template-page--members .member {
-  text-align: center;
-  height: 213px;
+  text-align: left;
   float: left !important;
-  overflow: hidden; }
+  position: relative; }
   .page-template-page--members .member h5 {
     font-family: "Lato", sans-serif;
-    transition: .3s all;
     color: #fff;
-    background: rgba(43, 89, 125, 0.77);
-    z-index: 2;
-    position: relative;
     padding: 6px; }
   .page-template-page--members .member img {
-    height: 188px;
-    margin: 0 auto;
     width: 100%;
     display: block;
     position: relative;
-    max-width: 184px; }
-  .page-template-page--members .member:hover h5 {
-    margin-top: -37px; }
+    /* 			max-width: 184px; */ }
+  .page-template-page--members .member .member-inner {
+    position: absolute;
+    top: -15px;
+    border: 15px solid #7f7f7f;
+    width: 258px;
+    left: -5px;
+    display: none;
+    z-index: 2;
+    background: #7f7f7f; }
+    .page-template-page--members .member .member-inner img {
+      width: 100%;
+      display: block; }
+  .page-template-page--members .member:hover {
+    /*
+			h5 {
+				margin-top:-37px;
+			}
+*/ }
+    .page-template-page--members .member:hover .member-inner {
+      display: block; }
 
 .member-social {
   padding-top: 5px;

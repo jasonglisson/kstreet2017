@@ -37,16 +37,13 @@ Template Name: Members
 				    <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
 				        <?php setup_postdata($post); ?>
 				        <li class="large-3 medium-4 small-12 columns member">
-				        	<br>
-				        	
-				            <a href="<?php the_permalink(); ?>">
+<!-- 				            <a href="<?php the_permalink(); ?>"> -->
 				            	<?php if (get_field('member_image', $post)) {?>
-				            		<div><img src="<?php echo get_field('member_image', $post); ?>"></div>
+				            		<img src="<?php echo get_field('member_image', $post); ?>">
 				            	<?php } else { ?>
-				            		<div><img src="<?php echo get_template_directory_uri(); ?>/library/images/default-member.jpg"></div>	
+				            		<img src="<?php echo get_template_directory_uri(); ?>/library/images/default-member.jpg">
 				            	<?php } ?>			            		
-				            	<h5><?php the_title(); ?></h5>
-				            </a>
+<!-- 				            </a> -->
 <!--
 				            <div class="member-social">
 					            <?php if (get_field('linkedin_link', $post)) {?>
@@ -58,6 +55,17 @@ Template Name: Members
 				            </div>
 				            <br>
 -->
+                  <div class="member-inner">
+                    <?php if (get_field('member_image', $post)) {?>
+			            		<img src="<?php echo get_field('member_image', $post); ?>">
+			            	<?php } else { ?>
+			            		<img src="<?php echo get_template_directory_uri(); ?>/library/images/default-member.jpg">
+			            	<?php } ?>	
+                    <h5><?php the_title(); ?></h5>
+				            <?php if (get_field('linkedin_link', $post)) {?>
+			            		<a target="_blank" class="linkedin" href="<?php echo get_field('linkedin_link', $post); ?>"><i class="fi-social-linkedin large"></i></a>
+			            	<?php } ?>                    
+                  </div>
 				        </li>
 				    <?php endforeach; ?>
 				    </ul>

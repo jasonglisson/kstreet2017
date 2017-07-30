@@ -28,29 +28,31 @@ Template Name: About
 						?>
 						<div class="process-wrap process-<?php echo $i++; ?>">
   				  		
-						<div class="process-item row">
-							<div class="large-2 medium-2 columns process-icons">
-  							<div class="icon-wrap">
-    							<?php if($image): ?>
-    							  <img src="<?php echo $image; ?>" />
-    							<?php else: ?>  
-  								  <?php echo $icon; ?>
-  							  <?php endif; ?>  
+						  <div class="process-item row">
+  							<div class="large-2 medium-2 columns process-icons">
+    							<div class="icon-wrap">
+      							<?php if($image): ?>
+      							  <img src="<?php echo $image; ?>" />
+      							<?php else: ?>  
+    								  <?php echo $icon; ?>
+    							  <?php endif; ?>  
+    							</div>
   							</div>
-							</div>
-							<div class="large-10 medium-10 columns process-info">
-								<h3><?php echo $process_title; ?></h3>
-								<div class="process-text"><?php echo $process_text; ?></div>
-							</div>
-							<hr>
-						</div>
+  							<div class="large-4 medium-2 columns process-title">
+    							<h3><?php echo $process_title; ?></h3>
+  							</div>	
+  							<div class="large-6 medium-10 columns process-info">
+  								<div class="process-text"><?php echo $process_text; ?></div>
+  							</div>
+  							<hr>
+  						</div>
 						</div>
 					<?php endwhile; ?>
 				
 				<?php endif; ?>
 				<div class="process-wrap">
   				<div class="process-item row">
-            <a href="<?php the_field('application_link', 'option'); ?>" class="button hollow process-btn" target="_blank">Submit Application</a> 
+            <a href="<?php the_field('application_link', 'option'); ?>" class="button hollow process-btn" target="_blank">Startup Submission</a> 
   				</div>	
 				</div>
 			</div>

@@ -1087,7 +1087,7 @@ button, .round-step {
     }
   }
   .process-btn {
-    margin: 18px auto 15px auto;
+    margin: 18px auto 35px auto;
     background: #b74a3e;
     border: 1px solid #b74a3e;
     color: #fff;
@@ -1127,6 +1127,13 @@ button, .round-step {
   		font-family: $raleway;	
   		text-transform: uppercase;	
   	}
+  }
+  .process-title {
+    padding-top: 3.6rem;
+    h3 {
+      color: #107c89;
+      text-transform: none;
+    }
   }
   .process-1 {
     i {
@@ -1295,31 +1302,43 @@ button, .round-step {
 		}
 	}
 	.member {
-		text-align: center;
-		height: 213px;
-		float: left !important;
-		overflow:hidden;
+		text-align: left;
+    float: left !important;
+		position: relative;
 		h5 {
 			font-family: $raleway;
-			transition:.3s all;
 			color: #fff;
-			background: rgba(43, 89, 125, 0.77);
-			z-index: 2;
-			position: relative;
 			padding: 6px;			
 		}
 		img {
-			height: 188px;
-			margin: 0 auto;
 			width: 100%;
 			display: block;
 			position: relative;
-			max-width: 184px;
+/* 			max-width: 184px; */
+		}
+		.member-inner {
+      position: absolute;
+      top: -15px;
+      border: 15px solid #7f7f7f;
+      width: 258px;
+      left: -5px;
+      display: none;
+      z-index: 2;
+      background: #7f7f7f;
+  		img {
+  			width: 100%;
+  			display: block;    		
+  		}
 		}
 		&:hover {
+  		.member-inner {
+    	  display: block;	
+    	}	
+/*
 			h5 {
 				margin-top:-37px;
 			}
+*/
 		}
 	}
 }
