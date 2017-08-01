@@ -7634,12 +7634,13 @@ button, .round-step {
   .page-template-page--members .member h5 {
     font-family: "Lato", sans-serif;
     color: #fff;
-    padding: 6px; }
+    padding: 6px 0 0 0; }
   .page-template-page--members .member img {
     width: 100%;
     display: block;
-    position: relative;
-    /* 			max-width: 184px; */ }
+    position: relative; }
+  .page-template-page--members .member .default-img {
+    height: 238px; }
   .page-template-page--members .member .member-inner {
     position: absolute;
     top: -15px;
@@ -7652,14 +7653,12 @@ button, .round-step {
     .page-template-page--members .member .member-inner img {
       width: 100%;
       display: block; }
-  .page-template-page--members .member:hover {
-    /*
-			h5 {
-				margin-top:-37px;
-			}
-*/ }
-    .page-template-page--members .member:hover .member-inner {
-      display: block; }
+    .page-template-page--members .member .member-inner a {
+      color: #fff;
+      font-size: .7rem;
+      margin: 0 0 5px 0; }
+  .page-template-page--members .member:hover .member-inner {
+    display: block; }
 
 .member-social {
   padding-top: 5px;
@@ -7694,6 +7693,22 @@ button, .round-step {
 
 .single-member footer {
   margin-top: 45px; }
+
+/* Philosophy */
+.page-template-page--philosophy .top-title-wrap {
+  margin-bottom: 0; }
+  .page-template-page--philosophy .top-title-wrap .title-wrap .page-title {
+    background: rgba(0, 85, 124, 0.9);
+    padding-bottom: 0;
+    margin-bottom: 0; }
+
+.page-template-page--philosophy .inner-wrap .row .content {
+  color: #fff;
+  background: rgba(0, 85, 124, 0.9);
+  padding: 2rem 4rem 4rem;
+  margin-bottom: 3rem; }
+  .page-template-page--philosophy .inner-wrap .row .content p {
+    font-size: 1.35rem; }
 
 /* Press Page */
 .page-template-page--press #press-links {

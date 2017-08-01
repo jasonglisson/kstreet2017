@@ -32,44 +32,31 @@ Template Name: Members
 				$posts = get_field('executive_committee');
 				
 				if( $posts ): ?>
-				<div class="row">
+				  <div class="row">
 				    <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-5">
 				    <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
 				        <?php setup_postdata($post); ?>
 				        <li class="large-3 medium-4 small-12 columns member">
-<!-- 				            <a href="<?php the_permalink(); ?>"> -->
-				            	<?php if (get_field('member_image', $post)) {?>
-				            		<img src="<?php echo get_field('member_image', $post); ?>">
-				            	<?php } else { ?>
-				            		<img src="<?php echo get_template_directory_uri(); ?>/library/images/default-member.jpg">
-				            	<?php } ?>			            		
-<!-- 				            </a> -->
-<!--
-				            <div class="member-social">
-					            <?php if (get_field('linkedin_link', $post)) {?>
-				            		<a target="_blank" class="linkedin" href="<?php echo get_field('linkedin_link', $post); ?>"><i class="fi-social-linkedin large"></i></a>
-				            	<?php } ?>
-					            <?php if (get_field('twitter_link', $post)) {?>
-				            		<a target="_blank" class="twitter" href="<?php echo get_field('twitter_link', $post); ?>"><i class="fi-social-twitter large"></i></a>
-				            	<?php } ?>				            	
-				            </div>
-				            <br>
--->
+			            	<?php if (get_field('member_image', $post)) {?>
+			            		<img src="<?php echo get_field('member_image', $post); ?>">
+			            	<?php } else { ?>
+			            		<img class="default-img" src="<?php echo get_template_directory_uri(); ?>/library/images/default-member.jpg">
+			            	<?php } ?>			            		
                   <div class="member-inner">
                     <?php if (get_field('member_image', $post)) {?>
 			            		<img src="<?php echo get_field('member_image', $post); ?>">
 			            	<?php } else { ?>
-			            		<img src="<?php echo get_template_directory_uri(); ?>/library/images/default-member.jpg">
+			            		<img class="default-img" src="<?php echo get_template_directory_uri(); ?>/library/images/default-member.jpg">
 			            	<?php } ?>	
                     <h5><?php the_title(); ?></h5>
 				            <?php if (get_field('linkedin_link', $post)) {?>
-			            		<a target="_blank" class="linkedin" href="<?php echo get_field('linkedin_link', $post); ?>"><i class="fi-social-linkedin large"></i></a>
+			            		<a target="_blank" class="linkedin" href="<?php echo get_field('linkedin_link', $post); ?>">visit linkedin</a>
 			            	<?php } ?>                    
                   </div>
 				        </li>
 				    <?php endforeach; ?>
 				    </ul>
-				</div>   
+				  </div>   
 				    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 				<?php endif; ?>		
 			</div>			
@@ -83,44 +70,32 @@ Template Name: Members
 				$posts = get_field('membership');
 				
 				if( $posts ): ?>
-				<div class="row">
+				  <div class="row">
 				    <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-5">
 				    <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
 				        <?php setup_postdata($post); ?>
 				        <li class="large-3 medium-4 small-12 columns member">
-				        	<br>
-				        	
-				            <a href="<?php the_permalink(); ?>">
-				            	<?php if (get_field('member_image', $post)) {?>
-				            		<div><img src="<?php echo get_field('member_image', $post); ?>"></div>
-				            	<?php } else { ?>
-				            		<div><img src="<?php echo get_template_directory_uri(); ?>/library/images/default-member.jpg"></div>	
-				            	<?php } ?>			            		
-				            	<h5><?php the_title(); ?></h5>
-				            </a>
-<!--
-				            <div class="member-social">
-					            <?php if (get_field('linkedin_link', $post)) {?>
-				            		<a target="_blank" class="linkedin" href="<?php echo get_field('linkedin_link', $post); ?>"><i class="fi-social-linkedin large"></i></a>
-				            	<?php } ?>
-					            <?php if (get_field('twitter_link', $post)) {?>
-				            		<a target="_blank" class="twitter" href="<?php echo get_field('twitter_link', $post); ?>"><i class="fi-social-twitter large"></i></a>
-				            	<?php } ?>				            	
-				            </div>
-				            <br>
--->
+			            	<?php if (get_field('member_image', $post)) {?>
+			            		<img src="<?php echo get_field('member_image', $post); ?>">
+			            	<?php } else { ?>
+			            		<img class="default-img" src="<?php echo get_template_directory_uri(); ?>/library/images/default-member.jpg">
+			            	<?php } ?>			            		
+                  <div class="member-inner">
+                    <?php if (get_field('member_image', $post)) {?>
+			            		<img src="<?php echo get_field('member_image', $post); ?>">
+			            	<?php } else { ?>
+			            		<img class="default-img" src="<?php echo get_template_directory_uri(); ?>/library/images/default-member.jpg">
+			            	<?php } ?>	
+                    <h5><?php the_title(); ?></h5>
+				            <?php if (get_field('linkedin_link', $post)) {?>
+			            		<a target="_blank" class="linkedin" href="<?php echo get_field('linkedin_link', $post); ?>">visit linkedin</a>
+			            	<?php } ?>                    
+                  </div>
 				        </li>
 				    <?php endforeach; ?>
 				    </ul>
-				</div>   
+				  </div>   
 				    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 				<?php endif; ?>		
-			</div>
-			<div class="mailchimp-signup">
-				<div class="row">
-					<h3>K Street Newsletter Signup</h3>
-					<div class="header-line"></div>
-					<?php echo do_shortcode( '[mc4wp_form]' ); ?>					
-				</div>	
-			</div>			
+			</div>		
 <?php get_footer(); ?>

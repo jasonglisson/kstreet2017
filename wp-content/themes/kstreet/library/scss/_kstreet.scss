@@ -1308,13 +1308,15 @@ button, .round-step {
 		h5 {
 			font-family: $raleway;
 			color: #fff;
-			padding: 6px;			
+			padding: 6px 0 0 0;			
 		}
 		img {
 			width: 100%;
 			display: block;
 			position: relative;
-/* 			max-width: 184px; */
+		}
+		.default-img {
+  		height: 238px;
 		}
 		.member-inner {
       position: absolute;
@@ -1329,16 +1331,16 @@ button, .round-step {
   			width: 100%;
   			display: block;    		
   		}
+  		a {
+    		color: #fff;
+    		font-size: .7rem;
+    		margin: 0 0 5px 0;
+  		}
 		}
 		&:hover {
   		.member-inner {
     	  display: block;	
     	}	
-/*
-			h5 {
-				margin-top:-37px;
-			}
-*/
 		}
 	}
 }
@@ -1386,6 +1388,33 @@ button, .round-step {
 		margin-top:45px;
 	}
 }
+
+/* Philosophy */
+.page-template-page--philosophy {
+  .top-title-wrap {	
+      margin-bottom: 0;
+    .title-wrap {
+      .page-title {
+        background: rgba(0, 85, 124, 0.9);
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }  
+    } 
+  }
+  .inner-wrap {
+    .row {
+      .content {
+        color: #fff;
+        background: rgba(0, 85, 124, 0.9);
+        padding: 2rem 4rem 4rem;
+        margin-bottom: 3rem;
+        p {
+          font-size: 1.35rem;
+        }
+      }
+    }
+  }
+}  
 
 /* Press Page */
 .page-template-page--press {
