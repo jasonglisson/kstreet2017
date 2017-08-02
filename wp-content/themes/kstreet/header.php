@@ -51,9 +51,6 @@
 		<meta name="description" content="Connecting the social, political, and financial capital of Washington, DC with promising startups.">
 	
 		<?php wp_head(); ?>
-
-		<!-- Drop Google Analytics here -->
-		<!-- end analytics -->
 		
 	</head>
 

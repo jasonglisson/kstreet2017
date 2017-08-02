@@ -1433,7 +1433,8 @@ button, .round-step {
 		background: #f6f6f6;
 	}
 	.content {
-		padding-top:45px;
+		font-size: 1.1rem;
+    line-height: 2.3rem;
 	}
 	footer {
 		margin-top:45px;
@@ -1443,6 +1444,54 @@ button, .round-step {
 			padding-bottom:45px;
 		}
 	}
+  .contact-form {
+  	padding-top:35px;
+  	background: #7f7f7f;
+  	label {
+    	color: #fff;
+      padding-bottom: .5rem;
+  	}
+  	input[type=text], input[type=email], textarea {
+    	border: 1px solid #3e3e3e;
+  	}
+  	.wpcf7-not-valid-tip {
+  		display:none;
+  	}
+  	input.wpcf7-submit {
+  		width: 50%;
+  		padding: 15px;
+  		margin: 0 auto;
+  		border: none;
+  		box-shadow: none;
+  		background: #b64a3e;
+  		-moz-border-radius: 6px;
+  		-webkit-border-radius: 6px;
+  		border-radius: 6px;
+  		border: none;
+  		display: table;
+  		cursor: pointer;
+  		color: #fff;
+  		font-size: 1.35rem;
+      padding: 13px 24px;
+  		text-decoration: none;
+  		transition: .3s all;
+  	}
+    .wpcf7-not-valid {
+  		border:1px solid red;
+  	}	
+  	.wpcf7-validation-errors {
+  		border: 0px solid #f7e700;
+  		color: red;
+  		margin-top: 0;
+  	}	
+  }	
+  .content {
+    padding: 1.2rem 7rem;
+    p {
+      font-size: 1.1rem;
+      line-height: 2rem;
+    }
+  }
 }
 .contact {
 	padding-top:35px;
@@ -1453,62 +1502,6 @@ button, .round-step {
 	iframe {
 		border:1px solid #ccc !important;
 	}
-}
-
-.contact-form {
-	padding-top:35px;
-	.wpcf7-not-valid-tip {
-		display:none;
-	}
-	input.wpcf7-submit {
-		width:100%;
-		padding:15px;
-		border:none;
-		-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
-		-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
-		box-shadow:inset 0px 1px 0px 0px #ffffff;
-		background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf));
-		background:-moz-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
-		background:-webkit-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
-		background:-o-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
-		background:-ms-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
-		background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
-		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf',GradientType=0);
-		background-color:#ededed;
-		-moz-border-radius:6px;
-		-webkit-border-radius:6px;
-		border-radius:6px;
-		border:1px solid #dcdcdc;
-		display:inline-block;
-		cursor:pointer;
-		color:#777777;
-		font-family:arial;
-		font-size:15px;
-		font-weight:bold;
-		padding:6px 24px;
-		text-decoration:none;
-		text-shadow:0px 1px 0px #ffffff;
-		text-transform: uppercase;
-		transition:.3s all;
-	}
-	input.wpcf7-submit:hover {
-		background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed));
-		background:-moz-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
-		background:-webkit-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
-		background:-o-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
-		background:-ms-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
-		background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
-		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed',GradientType=0);
-		background-color:#dfdfdf;	
-	}
-	.wpcf7-not-valid {
-		border:1px solid red;
-	}	
-	.wpcf7-validation-errors {
-		border: 0px solid #f7e700;
-		color: red;
-		margin-top: 0;
-	}	
 }
 
 /* Footer */
@@ -1564,7 +1557,6 @@ footer {
     li.active a {
       border-radius: 3px;
       font-weight: 300;
-      font-size: 1rem;
       background: none;
       padding: 0;
       cursor: pointer;
@@ -1661,6 +1653,7 @@ footer {
   text-align: center;
 }
 
+/*
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
 	.home #container {
@@ -1703,6 +1696,7 @@ footer {
 	}
 
 }
+*/
 
 @media only screen and (min-width : 320px) and (max-width : 923px) {
 
@@ -1719,8 +1713,9 @@ footer {
 	}	
 
 	.top-title-wrap {
-		padding-top: 200px;
-		padding-bottom: 100px;
+    padding-top: 0;
+    margin-top: 6rem;
+    padding-bottom: 1rem;
 		.page-title:after, .page-title:before {
 			display: none;
 		}
@@ -1738,5 +1733,50 @@ footer {
 			text-align: left;
 		}
 	}	
+	
+	.page-template-page--investments {
+  	.investments {
+    	.port-cat-list {
+      	li.portfolio-item {
+          padding-bottom: 1.5rem;
+        }
+      }
+    }
+  }
+	
+	.page-template-page--philosophy {
+  	.top-title-wrap {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+	
+	.page-template-page--about {
+  	.process-title {
+      padding-top: 0;
+  	}
+  	.process-info {
+      padding-bottom: 3rem;
+  	}
+  }	
+	
+  footer {
+    .sub-nav {
+      padding-bottom: 2rem;
+      li {
+        text-align: center;
+      }
+    }
+    .social {
+      display: inline-block;
+      float: inherit;
+    } 
+    .right-links {
+      text-align: center;
+    } 
+    .copyright {
+      text-align: center;
+    }
+  }
 	
 }
