@@ -41,7 +41,11 @@ Template Name: Members
 			            		<img src="<?php echo get_field('member_image', $post); ?>">
 			            	<?php } else { ?>
 			            		<img class="default-img" src="<?php echo get_template_directory_uri(); ?>/library/images/default-member.jpg">
-			            	<?php } ?>			            		
+			            	<?php } ?>
+			            	<h5 class="show-for-small-only"><?php the_title(); ?></h5>	
+			            	<?php if (get_field('linkedin_link', $post)) {?>
+			            		<a target="_blank" class="linkedin show-for-small-only" href="<?php echo get_field('linkedin_link', $post); ?>">visit linkedin</a>
+			            	<?php } ?>		            		
                   <div class="member-inner">
                     <?php if (get_field('member_image', $post)) {?>
 			            		<img src="<?php echo get_field('member_image', $post); ?>">
@@ -79,7 +83,11 @@ Template Name: Members
 			            		<img src="<?php echo get_field('member_image', $post); ?>">
 			            	<?php } else { ?>
 			            		<img class="default-img" src="<?php echo get_template_directory_uri(); ?>/library/images/default-member.jpg">
-			            	<?php } ?>			            		
+			            	<?php } ?>
+			            	<h5 class="show-for-small-only"><?php the_title(); ?></h5>	
+			            	<?php if (get_field('linkedin_link', $post)) {?>
+			            		<a target="_blank" class="linkedin show-for-small-only" href="<?php echo get_field('linkedin_link', $post); ?>">visit linkedin</a>
+			            	<?php } ?>		            		
                   <div class="member-inner">
                     <?php if (get_field('member_image', $post)) {?>
 			            		<img src="<?php echo get_field('member_image', $post); ?>">

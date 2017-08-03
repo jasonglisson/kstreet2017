@@ -1292,6 +1292,8 @@ button, .round-step {
 /* Members */
 .page-template-page--members {
 
+  
+
 	.inner-wrap {
 		background: #f5f5f5;
 	}
@@ -1759,6 +1761,23 @@ footer {
       padding-bottom: 3rem;
   	}
   }	
+	
+	.page-template-page--members {
+  	.member-wrap {
+    	padding:15px;
+    	.member {
+        h5 {
+          color: #00557c;
+        }  
+      	.default-img {
+          height: 180px;
+        }  
+        .default-img {
+          height: 190px;
+        }  
+    	}
+  	}
+	}
 	
   footer {
     .sub-nav {

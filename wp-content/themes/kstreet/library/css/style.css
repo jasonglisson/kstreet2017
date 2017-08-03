@@ -7975,6 +7975,14 @@ footer {
     padding-top: 0; }
   .page-template-page--about .process-info {
     padding-bottom: 3rem; }
+  .page-template-page--members .member-wrap {
+    padding: 15px; }
+    .page-template-page--members .member-wrap .member h5 {
+      color: #00557c; }
+    .page-template-page--members .member-wrap .member .default-img {
+      height: 180px; }
+    .page-template-page--members .member-wrap .member .default-img {
+      height: 190px; }
   footer .sub-nav {
     padding-bottom: 2rem; }
     footer .sub-nav li {
