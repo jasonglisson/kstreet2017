@@ -19,7 +19,7 @@ Template Name: Homepage
 	<div class="large-6 medium-12 columns">
   	<h1 class="raleway"><?php the_field('sub_section_header_1'); ?></h1>
   	<div class="about-text"><?php the_field('sub_section_text_1'); ?></div> 
-  	<a href="<?php the_field('sub_section_button_link_1'); ?>" class="button hollow application-btn">View Our Portfolio</a>
+  	<a href="<?php the_field('sub_section_button_1'); ?>" class="button hollow application-btn">View Our Portfolio</a>
 	</div>
 	<div class="large-6 medium-12 columns"><img src="<?php the_field('sub_section_image_1'); ?>"></div>
 	<div class="large-6 medium-12 columns"><img src="<?php the_field('sub_section_image_2'); ?>"></div>
