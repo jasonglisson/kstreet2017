@@ -1,4 +1,4 @@
-					<div class="mobile-menu show-for-small-only">
+					<div class="mobile-menu show-for-touch show-for-small-only show-for-medium-only">
 						<?php joints_main_nav(); ?> 
 					</div>
 					<footer class="footer" role="contentinfo">

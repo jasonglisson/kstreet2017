@@ -34,17 +34,17 @@ Template Name: Homepage
     <h1 class="large-12 columns">Investment Process</h1>
     <div classs="large-12 columns">
       <div class="process-wrap">
-        <div class="round-step spin circle step-1"><img src="<?php print get_template_directory_uri(); ?>/library/images/application-icon.png" alt="Application" title="Application"/><span>1. Application</span></div>
+        <a href="/investment-process#step-1"><div class="round-step spin circle step-1"><img src="<?php print get_template_directory_uri(); ?>/library/images/application-icon.png" alt="Application" title="Application"/><span>1. Application</span></div></a>
         <div class="process-line line-1"></div>
-        <div class="round-step spin circle step-2"><img src="<?php print get_template_directory_uri(); ?>/library/images/pre-screen-icon.png" alt="Pre-Screening Committee" title="Pre-Screening Committee"/><span>2. Pre-Screening<br>&nbsp;&nbsp;&nbsp;&nbsp;Committee</span></div>
+        <a href="/investment-process#step-2"><div class="round-step spin circle step-2"><img src="<?php print get_template_directory_uri(); ?>/library/images/pre-screen-icon.png" alt="Pre-Screening Committee" title="Pre-Screening Committee"/><span>2. Pre-Screening<br>&nbsp;&nbsp;&nbsp;&nbsp;Committee</span></div></a>
         <div class="process-line line-2"></div>      
-        <div class="round-step spin circle step-3"><img src="<?php print get_template_directory_uri(); ?>/library/images/presentation-icon.png" alt="Presentation" title="Presentation"/><span>3. Presentation</span></div>
+        <a href="/investment-process#step-3"><div class="round-step spin circle step-3"><img src="<?php print get_template_directory_uri(); ?>/library/images/presentation-icon.png" alt="Presentation" title="Presentation"/><span>3. Presentation</span></div></a>
         <div class="process-line line-3"></div>      
-        <div class="round-step spin circle step-4"><img src="<?php print get_template_directory_uri(); ?>/library/images/diligence-icon.png" alt="Diligence" title="Diligence"/><span>4. Diligence</span></div>
+        <a href="/investment-process#step-4"><div class="round-step spin circle step-4"><img src="<?php print get_template_directory_uri(); ?>/library/images/diligence-icon.png" alt="Diligence" title="Diligence"/><span>4. Diligence</span></div></a>
         <div class="process-line line-4"></div>      
-        <div class="round-step spin circle step-5"><img src="<?php print get_template_directory_uri(); ?>/library/images/funding-icon.png" alt="Funding" title="Funding"/><span>5. Funding</span></div>
+        <a href="/investment-process#step-5"><div class="round-step spin circle step-5"><img src="<?php print get_template_directory_uri(); ?>/library/images/funding-icon.png" alt="Funding" title="Funding"/><span>5. Funding</span></div></a>
         <div class="process-line line-5"></div>      
-        <div class="round-step spin circle step-6"><img src="<?php print get_template_directory_uri(); ?>/library/images/growth-icon.png" alt="Growth" title="Growth"/><span>6. Growth</span></div>  
+        <a href="/investment-process#step-6"><div class="round-step spin circle step-6"><img src="<?php print get_template_directory_uri(); ?>/library/images/growth-icon.png" alt="Growth" title="Growth"/><span>6. Growth</span></div></a>  
       </div>          
     </div>  
   </div>
@@ -52,7 +52,7 @@ Template Name: Homepage
 <div class="large-12 columns process-button-area">
   <div class="row">
     <a href="<?php the_field('application_link', 'option'); ?>" class="button hollow process-btn" target="_blank">Submit Application</a> 
-    <a href="/investment-process" class="learn-more">learn more</a>
+    <a href="/investment-process" class="learn-more">Learn More</a>
   </div>
 </div> 
 <div class="portfolio">
@@ -91,7 +91,7 @@ Template Name: Homepage
         <div class="large-5 columns left-contact">
           <h4 class="">Interested in learning more?</h4>  
           <a href="/contact" class="button hollow contact-btn">Contact Us</a>
-          <a href="" target="_blank" class="linkedin">visit our LinkedIn page</a>        
+          <a href="" target="_blank" class="linkedin">Visit Our LinkedIn Page</a>        
         </div>
         <div class="large-7 columns right-contact">
           <h4 class="">Follow Us on Twitter <a href="https://twitter.com/KStCapital" target="_blank">@KstCapital</a></h4>

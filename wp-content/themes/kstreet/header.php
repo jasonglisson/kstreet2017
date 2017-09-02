@@ -65,11 +65,11 @@
 						 <?php// get_template_part( 'partials/nav', 'top-offcanvas' ); ?>
 								 
 						<div class="post-menu">
-							<div class="row show-for-medium-up">
+							<div class="row show-for-large-up">
 								<a href="/" class="logo">KStreet</a>
 								<?php joints_main_nav(); ?> 
 							</div>
-							<div class="row show-for-small-only">
+							<div class="row show-for-touch show-for-small-only show-for-medium-only hide-for-large-up">
 								<div class="small-9 columns"><a href="/" class="mobile-home">KStreet</a></div>
 								<div class="small-3 columns">
 									<div class="show-mobile-menu">
@@ -83,11 +83,11 @@
 							</div>
 						</div>
 						<div class="post-second-menu">
-							<div class="row show-for-medium-up">
+							<div class="row show-for-large-up">
 								<a href="/" class="logo">KStreet</a>
 								<?php joints_main_nav(); ?> 
 							</div>
-							<div class="row show-for-small-only">
+							<div class="row show-for-touch show-for-small-only show-for-medium-only hide-for-large-up">
 								<div class="small-9 columns"><a href="/" class="mobile-home">KStreet</a></div>
 								<div class="small-3 columns">
 									<div class="show-mobile-menu">

@@ -6671,15 +6671,14 @@ h3 {
   display: block; }
 
 .mobile-menu-icon span {
-  background: #fff;
+  background: #666;
   display: block;
   opacity: 1;
   transition: all 0.2s linear;
   margin-bottom: 6px;
   position: relative;
   width: 100%;
-  height: 5px;
-  background: #fff; }
+  height: 5px; }
 
 .mobile-menu-icon span .span2 {
   transition: all 0.05s linear; }
@@ -6769,7 +6768,7 @@ body.overflow {
     padding-top: 33px;
     margin-left: 0;
     float: right;
-    font-weight: 300; }
+    font-weight: 400; }
     .post-menu ul li, .post-second-menu ul li {
       float: left; }
       .post-menu ul li a, .post-second-menu ul li a {
@@ -6800,7 +6799,7 @@ body.overflow {
     font-size: 2rem; }
 
 .post-menu.fixed {
-  background: rgba(247, 247, 247, 0.69);
+  background: #a2a2a2;
   top: 0px;
   width: 100%;
   z-index: 93;
@@ -6813,7 +6812,7 @@ body.overflow {
   font-family: "Lato", sans-serif;
   margin-bottom: 0;
   height: 125px;
-  background: rgba(247, 247, 247, 0.69);
+  background: #a2a2a2;
   top: -110px;
   transition: .7s all;
   padding-top: 30px;
@@ -6823,7 +6822,7 @@ body.overflow {
 
 .post-second-menu.fixed {
   top: -5px;
-  background: rgba(247, 247, 247, 0.69);
+  background: #a2a2a2;
   opacity: 1; }
 
 /* Coming Soon */
@@ -6983,7 +6982,8 @@ body.overflow {
     float: left;
     z-index: 2;
     position: relative;
-    transition: .3s all; }
+    transition: .3s all;
+    cursor: pointer; }
     .process .round-step img {
       transition: .3s all; }
     .process .round-step span {
@@ -7141,7 +7141,7 @@ body.overflow {
       background: #b74a3e;
       color: #fff; }
 
-button, .round-step {
+button, .round-step, .icon-wrap {
   background: none;
   border: 0;
   box-sizing: border-box;
@@ -7150,7 +7150,8 @@ button, .round-step {
   vertical-align: middle; }
   button::before,
   button::after, .round-step::before,
-  .round-step::after {
+  .round-step::after, .icon-wrap::before,
+  .icon-wrap::after {
     box-sizing: inherit;
     content: '';
     position: absolute;
@@ -7445,8 +7446,10 @@ button, .round-step {
 /* About */
 .page-template-page--about .process-item {
   background: #f6f6f6; }
-  .page-template-page--about .process-item .process-info {
-    padding-top: 25px; }
+  .page-template-page--about .process-item .process-text {
+    height: 160px;
+    display: flex;
+    align-items: center; }
   .page-template-page--about .process-item hr {
     width: 97%;
     margin: 0 auto;
@@ -7477,6 +7480,10 @@ button, .round-step {
 .page-template-page--about .process-wrap.process-6 hr {
   display: none; }
 
+.page-template-page--about .process-wrap.active .process-item {
+  transition: .5s all;
+  background: #ddd; }
+
 .page-template-page--about #about-wrap {
   padding-top: 240px;
   padding-bottom: 145px;
@@ -7500,11 +7507,13 @@ button, .round-step {
     font-family: "Lato", sans-serif;
     text-transform: uppercase; }
 
-.page-template-page--about .process-title {
-  padding-top: 3.6rem; }
-  .page-template-page--about .process-title h3 {
-    color: #107c89;
-    text-transform: none; }
+.page-template-page--about .process-title h3 {
+  color: #107c89;
+  text-transform: none;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  margin: 0; }
 
 .page-template-page--about .process-1 i {
   font-size: 4.5rem;
@@ -7979,8 +7988,6 @@ footer {
     padding: 15px; }
     .page-template-page--members .member-wrap .member h5 {
       color: #00557c; }
-    .page-template-page--members .member-wrap .member .default-img {
-      height: 180px; }
     .page-template-page--members .member-wrap .member .default-img {
       height: 190px; }
   footer .sub-nav {

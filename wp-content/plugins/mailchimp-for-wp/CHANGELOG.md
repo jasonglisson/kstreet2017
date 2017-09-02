@@ -1,6 +1,37 @@
 Changelog
 =========
 
+#### 4.1.6 - July 31, 2017
+
+**Fixes**
+
+- Method on API class for retrieving campaign data.
+
+**Improvements**
+
+- Show Akamai reference number when an API request is blocked by MailChimp's firewall.
+- Minor output buffering improvements in form previewer.
+
+
+#### 4.1.5 - June 27, 2017
+
+**Fixes**
+
+- Failsafe against outputting sign-up checkbox twice in registration forms.
+- Properly close HTML anchor element in French translation files.
+- Fix BuddyPress sign-ups when using WordPress Multisite.
+
+**Improvements**
+
+- Fire action hook `mc4wp_form_updated_subscriber` whenever a form was used to update a subscriber in MailChimp.
+- Increase browser timeout for AJAX request when fetching MailChimp lists.
+
+**Additions**
+
+- Added campaign & template methods to API client class.
+ 
+
+
 #### 4.1.4 - June 15, 2017
 
 **Fixes**

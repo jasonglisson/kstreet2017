@@ -14,7 +14,7 @@ Template Name: About
     		</div> <!-- end #inner-content -->
     	</div> <!-- end .top-title-wrap -->
 			<div class="process-list">
-  			<?php $i = 1; ?>
+  			<?php $i = 1; $num = 1 ?>
 				<?php if( have_rows('process') ):?>
   
 					<?php while( have_rows('process') ): the_row(); 
@@ -26,11 +26,11 @@ Template Name: About
 						$process_text = get_sub_field('process_text');
 					
 						?>
-						<div class="process-wrap process-<?php echo $i++; ?>">
+						<div class="process-wrap process-<?php echo $i++; ?>" id="step-<?php echo $num++; ?>">
   				  		
 						  <div class="process-item row">
   							<div class="large-2 medium-2 columns process-icons">
-    							<div class="icon-wrap">
+    							<div class="icon-wrap spin circle">
       							<?php if($image): ?>
       							  <img src="<?php echo $image; ?>" />
       							<?php else: ?>  

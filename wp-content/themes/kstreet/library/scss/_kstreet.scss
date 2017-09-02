@@ -68,7 +68,7 @@ $margin: 6px;
 $spans: 3;
 
 .mobile-menu-icon span {
-    background: #fff;
+    background: #666;
     display: block;
     opacity:1;
     transition:all 0.2s linear;
@@ -76,7 +76,6 @@ $spans: 3;
     position:relative;
     width: 100%;
     height: $spanheight;
-    background: #fff;
 }
 
 .mobile-menu-icon span .span2 {
@@ -176,7 +175,7 @@ body.overflow {
 		padding-top: 33px;
 		margin-left:0;		
 		float:right;
-		font-weight: 300;
+		font-weight: 400;
 		li {
 			float:left;
 			a {
@@ -217,7 +216,7 @@ body.overflow {
 }
 
 .post-menu.fixed {
-	background: rgba(247, 247, 247, 0.69);
+	background: #a2a2a2;
 	top: 0px;
 	width: 100%;
 	z-index: 93;
@@ -231,7 +230,7 @@ body.overflow {
 	font-family: $raleway;
 	margin-bottom: 0;
 	height: 125px;
-	background: rgba(247, 247, 247, 0.69);
+	background: #a2a2a2;
 	top: -110px;
 	transition: .7s all;
 	padding-top: 30px;
@@ -242,7 +241,7 @@ body.overflow {
 
 .post-second-menu.fixed {
 	top: -5px;
-	background: rgba(247, 247, 247, 0.69);	
+	background: #a2a2a2;	
 	opacity: 1;
 }
 
@@ -430,6 +429,7 @@ body.overflow {
     z-index: 2;
     position: relative;
     transition: .3s all;
+    cursor: pointer;
     img {
       transition: .3s all;
     }
@@ -659,7 +659,7 @@ $purple: #00b685;
 $blue: #00b685;
 
 // Basic styles
-button, .round-step {
+button, .round-step, .icon-wrap {
   background: none;
   border: 0;
   box-sizing: border-box;
@@ -1062,7 +1062,12 @@ button, .round-step {
   .process-item {
     background: #f6f6f6;
     .process-info {
-      padding-top: 25px;
+     // padding-top: 25px;
+    }
+    .process-text {
+      height: 160px;
+      display: flex;
+      align-items: center;      
     }
     hr {
       width: 97%;
@@ -1102,6 +1107,11 @@ button, .round-step {
      display: none;
     }
   }
+  .process-wrap.active .process-item {
+    transition: .5s all;
+    background: #ddd;
+  }
+  
   #about-wrap {
   	padding-top: 240px;
   	padding-bottom: 145px;
@@ -1129,10 +1139,13 @@ button, .round-step {
   	}
   }
   .process-title {
-    padding-top: 3.6rem;
     h3 {
       color: #107c89;
       text-transform: none;
+      height: 160px;
+      display: flex;
+      align-items: center;   
+      margin: 0;     
     }
   }
   .process-1 {
@@ -1768,10 +1781,7 @@ footer {
     	.member {
         h5 {
           color: #00557c;
-        }  
-      	.default-img {
-          height: 180px;
-        }  
+        }   
         .default-img {
           height: 190px;
         }  

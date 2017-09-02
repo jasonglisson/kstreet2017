@@ -123,7 +123,8 @@ $(function() {
 	downFlick();
 	
 	function parallaxScroll(){
-		var scrolled = $(window).scrollTop();					
+		var scrolled = $(window).scrollTop();	
+		$('body.home').css('background-position-y', ((scrolled*'-.50'))+'px');				
 	}
 	
 	$('#application-form input[value=Other]').change(
@@ -165,5 +166,31 @@ $(function() {
       scrollTop: $(portLink).offset().top-100
     }, 900);
 	});
+
+  var hashLink = window.location.hash;
+  
+  // to top right away
+  if ( hashLink ) scroll(0,0);
+  // void some browsers issue
+  setTimeout( function() { scroll(0,0); }, 1);
+    
+  // *only* if we have anchor on the url
+  if(hashLink) {
+  
+    // smooth scroll to the anchor id
+    $('html, body').animate({
+        scrollTop: $(hashLink).offset().top - 100 + 'px'
+    }, 600, 'swing');
+    
+    setTimeout(function() {
+      $(hashLink).addClass('active');
+      setTimeout(function() {
+        $(window).scroll(function(){
+          $(hashLink).removeClass('active');
+        });  
+      }, 900);
+    }, 900);
+    
+  }
 	
 });
