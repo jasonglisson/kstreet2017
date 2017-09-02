@@ -193,4 +193,9 @@ $(function() {
     
   }
 	
+  $('.process-1').on('mouseenter', function(e){
+    //$(this).find('.spin').mouseenter().mouseleave();
+    $(this).find('.spin').trigger('mouseenter');
+  });
+	
 });

@@ -7606,7 +7606,8 @@ button, .round-step, .icon-wrap {
   height: 200px; }
   .page-template-page--investments .invest img {
     margin: 0 auto;
-    display: block; }
+    display: block;
+    border: 2px solid #808080; }
 
 .page-template-page--investments .port-menu {
   background: #f6f6f6; }
