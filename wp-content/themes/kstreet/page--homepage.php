@@ -16,12 +16,13 @@ Template Name: Homepage
 	<div class="arrow show-for-medium-up"></div>
 </div> <!-- end #content -->
 <div class="about-us">
+	<div class="large-6 medium-12 columns show-for-touch-only"><img src="<?php the_field('sub_section_image_1'); ?>"></div>  
 	<div class="large-6 medium-12 columns">
   	<h1 class="raleway"><?php the_field('sub_section_header_1'); ?></h1>
   	<div class="about-text"><?php the_field('sub_section_text_1'); ?></div> 
   	<a href="<?php the_field('sub_section_button_1'); ?>" class="button hollow application-btn">View Our Portfolio</a>
 	</div>
-	<div class="large-6 medium-12 columns"><img src="<?php the_field('sub_section_image_1'); ?>"></div>
+	<div class="large-6 medium-12 columns hide-for-touch"><img src="<?php the_field('sub_section_image_1'); ?>"></div>
 	<div class="large-6 medium-12 columns"><img src="<?php the_field('sub_section_image_2'); ?>"></div>
 	<div class="large-6 medium-12 columns">
   	<h1 class="raleway"><?php the_field('sub_section_header_2'); ?></h1>
@@ -33,7 +34,7 @@ Template Name: Homepage
   <div class="row">
     <h1 class="large-12 columns">Investment Process</h1>
     <div classs="large-12 columns">
-      <div class="process-wrap">
+      <div class="process-wrap hide-for-touch">
         <a href="/investment-process#step-1"><div class="round-step spin circle step-1"><img src="<?php print get_template_directory_uri(); ?>/library/images/application-icon.png" alt="Application" title="Application"/><span>1. Application</span></div></a>
         <div class="process-line line-1"></div>
         <a href="/investment-process#step-2"><div class="round-step spin circle step-2"><img src="<?php print get_template_directory_uri(); ?>/library/images/pre-screen-icon.png" alt="Pre-Screening Committee" title="Pre-Screening Committee"/><span>2. Pre-Screening<br>&nbsp;&nbsp;&nbsp;&nbsp;Committee</span></div></a>
@@ -45,7 +46,48 @@ Template Name: Homepage
         <a href="/investment-process#step-5"><div class="round-step spin circle step-5"><img src="<?php print get_template_directory_uri(); ?>/library/images/funding-icon.png" alt="Funding" title="Funding"/><span>5. Funding</span></div></a>
         <div class="process-line line-5"></div>      
         <a href="/investment-process#step-6"><div class="round-step spin circle step-6"><img src="<?php print get_template_directory_uri(); ?>/library/images/growth-icon.png" alt="Growth" title="Growth"/><span>6. Growth</span></div></a>  
-      </div>          
+      </div> 
+      <div class="mobile-process-wrap show-for-touch">
+        <div class="process-list">
+    			<?php $i = 1; $num = 1 ?>
+  				<?php if( have_rows('process', 6) ):?>
+    
+  					<?php while( have_rows('process', 6) ): the_row(); 
+  					
+  						// vars
+  						$icon = get_sub_field('icon', 6);
+  						$image = get_sub_field('process_image', 6);
+  						$process_title = get_sub_field('process_title', 6);
+  					
+  						?>
+  						<div class="process-wrap process-<?php echo $i++; ?>" id="step-<?php echo $num++; ?>">
+    				  		
+  						  <div class="process-item row">
+    							<div class="medium-3 small-12 columns process-icons">
+      							<div class="icon-wrap spin circle">
+        							<?php if($image): ?>
+        							  <img src="<?php echo $image; ?>" />
+        							<?php else: ?>  
+      								  <?php echo $icon; ?>
+      							  <?php endif; ?>  
+      							</div>
+    							</div>
+    							<div class="medium-9 small-12 columns process-title">
+      							<h3><?php echo $process_title; ?></h3>
+    							</div>	
+    							<hr>
+    						</div>
+  						</div>
+  					<?php endwhile; ?>
+  				
+  				<?php endif; ?>
+  				<div class="process-wrap">
+    				<div class="process-item row">
+              <a href="<?php the_field('application_link', 'option'); ?>" class="button hollow process-btn" target="_blank">Startup Submission</a> 
+    				</div>	
+  				</div>
+  			</div>        
+      </div>           
     </div>  
   </div>
 </div> 

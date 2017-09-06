@@ -44,7 +44,7 @@ Template Name: Members
 			            	<?php } ?>
 			            	<h5 class="show-for-small-only"><?php the_title(); ?></h5>	
 			            	<?php if (get_field('linkedin_link', $post)) {?>
-			            		<a target="_blank" class="linkedin show-for-small-only" href="<?php echo get_field('linkedin_link', $post); ?>">visit linkedin</a>
+			            		<a target="_blank" class="linkedin show-for-small-only" href="<?php echo get_field('linkedin_link', $post); ?>" title="LinkedIn"><i class="fi-social-linkedin"></i></a>
 			            	<?php } ?>		            		
                   <div class="member-inner">
                     <?php if (get_field('member_image', $post)) {?>
@@ -54,7 +54,7 @@ Template Name: Members
 			            	<?php } ?>	
                     <h5><?php the_title(); ?></h5>
 				            <?php if (get_field('linkedin_link', $post)) {?>
-			            		<a target="_blank" class="linkedin" href="<?php echo get_field('linkedin_link', $post); ?>">visit linkedin</a>
+			            		<a target="_blank" class="linkedin" href="<?php echo get_field('linkedin_link', $post); ?>" title="LinkedIn"><i class="fi-social-linkedin"></i></a>
 			            	<?php } ?>                    
                   </div>
 				        </li>
@@ -86,7 +86,7 @@ Template Name: Members
 			            	<?php } ?>
 			            	<h5 class="show-for-small-only"><?php the_title(); ?></h5>	
 			            	<?php if (get_field('linkedin_link', $post)) {?>
-			            		<a target="_blank" class="linkedin show-for-small-only" href="<?php echo get_field('linkedin_link', $post); ?>">visit linkedin</a>
+			            		<a target="_blank" class="linkedin show-for-small-only" href="<?php echo get_field('linkedin_link', $post); ?>" title="LinkedIn"><i class="fi-social-linkedin"></i></a>
 			            	<?php } ?>		            		
                   <div class="member-inner">
                     <?php if (get_field('member_image', $post)) {?>
@@ -96,7 +96,7 @@ Template Name: Members
 			            	<?php } ?>	
                     <h5><?php the_title(); ?></h5>
 				            <?php if (get_field('linkedin_link', $post)) {?>
-			            		<a target="_blank" class="linkedin" href="<?php echo get_field('linkedin_link', $post); ?>">visit linkedin</a>
+			            		<a target="_blank" class="linkedin" href="<?php echo get_field('linkedin_link', $post); ?>" title="LinkedIn"><i class="fi-social-linkedin"></i></a>
 			            	<?php } ?>                    
                   </div>
 				        </li>
