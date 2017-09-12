@@ -6824,7 +6824,7 @@ body.overflow {
     font-size: 2rem; }
 
 .post-menu.fixed {
-  background: #a2a2a2;
+  background: #d3d3d3;
   top: 0px;
   width: 100%;
   z-index: 93;
@@ -6837,7 +6837,7 @@ body.overflow {
   font-family: "Lato", sans-serif;
   margin-bottom: 0;
   height: 125px;
-  background: #a2a2a2;
+  background: #d3d3d3;
   top: -110px;
   transition: .7s all;
   padding-top: 30px;
@@ -6847,7 +6847,7 @@ body.overflow {
 
 .post-second-menu.fixed {
   top: -5px;
-  background: #a2a2a2;
+  background: #d3d3d3;
   opacity: 1; }
 
 /* Coming Soon */
@@ -7995,12 +7995,34 @@ footer {
     margin-bottom: 3rem; }
   .home #container .process {
     height: auto; }
+    .home #container .process .process-wrap {
+      display: none; }
+    .home #container .process h1 {
+      padding-bottom: 1rem; }
     .home #container .process .mobile-process-wrap {
       padding: 2rem 0; }
+      .home #container .process .mobile-process-wrap .process-title {
+        text-align: center;
+        padding: 2rem 0; }
+      .home #container .process .mobile-process-wrap .spin {
+        height: 6rem;
+        width: 6rem;
+        font-size: 4rem;
+        text-align: center;
+        border: 1px solid #888888;
+        display: block;
+        background: #fff;
+        margin: 0 auto;
+        color: #A2A2A2; }
+        .home #container .process .mobile-process-wrap .spin img {
+          width: 56%;
+          margin-top: -17px; }
   .home #container .portfolio .button {
     width: 50%; }
   .home #container .members .button {
     width: auto; }
+  .home #container .members .member-inner {
+    display: none; }
   .home #container .press .press-content {
     padding: 15px; }
   .home #container .press .next {
