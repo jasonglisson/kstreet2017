@@ -29,7 +29,7 @@ Template Name: About
 						<div class="process-wrap process-<?php echo $i++; ?>" id="step-<?php echo $num++; ?>">
   				  		
 						  <div class="process-item row">
-  							<div class="large-2 medium-2 columns process-icons">
+  							<div class="large-2 medium-12 columns process-icons">
     							<div class="icon-wrap spin circle">
       							<?php if($image): ?>
       							  <img src="<?php echo $image; ?>" />
@@ -38,10 +38,10 @@ Template Name: About
     							  <?php endif; ?>  
     							</div>
   							</div>
-  							<div class="large-4 medium-2 columns process-title">
+  							<div class="large-4 medium-12 columns process-title">
     							<h3><?php echo $process_title; ?></h3>
   							</div>	
-  							<div class="large-6 medium-10 columns process-info">
+  							<div class="large-6 medium-12 columns process-info">
   								<div class="process-text"><?php echo $process_text; ?></div>
   							</div>
   							<hr>

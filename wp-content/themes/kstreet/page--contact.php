@@ -15,10 +15,10 @@ Template Name: Contact
     	</div> <!-- end .top-title-wrap -->
 			<div class="inner-wrap">
 				<div class="row">
- 					<div class="large-6 columns contact-form">
+ 					<div class="large-6 medium-6 small-12 columns contact-form">
 						<?php echo do_shortcode( '[contact-form-7 id="35" title="Contact"]' ); ?>
 					</div>	 				
-					<div class="large-6 columns content">
+					<div class="large-6 medium-6 small-12 columns content">
 						<?php if (have_posts()) : while (have_posts()) : the_post();?>
 							<?php the_content(); ?>
 						<?php endwhile; endif; ?>

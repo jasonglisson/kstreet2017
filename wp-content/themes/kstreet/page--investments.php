@@ -56,7 +56,7 @@ Template Name: Investments
           <?php if( $the_query->have_posts() ): ?>
           	<ul class="port-cat-list">
           	<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
-          		<li class="portfolio-item large-4 columns">
+          		<li class="portfolio-item large-4 medium-6 small-12 columns">
         				<img src="<?php the_field('investment_image', $post->ID);?>">
         				<div class="inner-port-wrap">
           				<img src="<?php the_field('investment_image', $post->ID);?>">
@@ -94,7 +94,7 @@ Template Name: Investments
 		    <div class="row">
 		    <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
 		        <?php setup_postdata($post); ?>
-		        <div class="portfolio-item large-4 columns invest">
+		        <div class="portfolio-item large-4 medium-6 small-12 columns invest">
 			        <?php $company_link = get_field('link_to_company_site', $post); 
 				        if(!empty($company_link)): ?>
 							<a href="<?php echo $company_link; ?>" title="<?php the_title(); ?>" target="_blank"><img src="<?php echo get_field('investment_image', $post); ?>"></a>

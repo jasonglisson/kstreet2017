@@ -7986,51 +7986,65 @@ footer {
 }
 */
 @media only screen and (min-width: 320px) and (max-width: 923px) {
-  .home #container #content {
-    height: 715px !important; }
-    .home #container #content #inner-content {
-      padding-top: 150px; }
-      .home #container #content #inner-content h3 {
-        font-size: 30px; }
-  .home #container .about-us .about-text {
-    margin: 0; }
-  .home #container .about-us .button {
-    width: 100%;
-    margin-bottom: 3rem; }
-  .home #container .process {
-    height: auto; }
-    .home #container .process .process-wrap {
-      display: none; }
-    .home #container .process h1 {
-      padding-bottom: 1rem; }
-    .home #container .process .mobile-process-wrap {
-      padding: 2rem 0; }
-      .home #container .process .mobile-process-wrap .process-title {
-        text-align: center;
+  .home {
+    background: none; }
+    .home #container #content {
+      height: 715px !important; }
+      .home #container #content #main {
+        text-align: center; }
+        .home #container #content #main h3 p {
+          text-align: center; }
+          .home #container #content #main h3 p br {
+            display: none; }
+      .home #container #content #inner-content {
+        padding-top: 150px; }
+        .home #container #content #inner-content h3 {
+          font-size: 30px; }
+    .home .about-us .hide-for-large-up {
+      padding-top: 1rem; }
+    .home .about-us .about-text {
+      margin: 0; }
+    .home .about-us .button {
+      width: 100%;
+      margin-bottom: 3rem; }
+    .home .about-us img {
+      width: 100%; }
+    .home .process {
+      height: auto; }
+      .home .process .process-wrap {
+        display: none; }
+      .home .process h1 {
+        padding-bottom: 1rem; }
+      .home .process .mobile-process-wrap {
         padding: 2rem 0; }
-      .home #container .process .mobile-process-wrap .spin {
-        height: 6rem;
-        width: 6rem;
-        font-size: 4rem;
-        text-align: center;
-        border: 1px solid #888888;
-        display: block;
-        background: #fff;
-        margin: 0 auto;
-        color: #A2A2A2; }
-        .home #container .process .mobile-process-wrap .spin img {
-          width: 56%;
-          margin-top: -17px; }
-  .home #container .portfolio .button {
-    width: 50%; }
-  .home #container .members .button {
-    width: auto; }
-  .home #container .members .member-inner {
-    display: none; }
-  .home #container .press .press-content {
-    padding: 15px; }
-  .home #container .press .next {
-    display: none !important; }
+        .home .process .mobile-process-wrap .process-title {
+          text-align: center;
+          padding: 2rem 0; }
+        .home .process .mobile-process-wrap .spin {
+          height: 6rem;
+          width: 6rem;
+          font-size: 4rem;
+          text-align: center;
+          border: 1px solid #888888;
+          display: block;
+          background: #fff;
+          margin: 0 auto;
+          color: #A2A2A2; }
+          .home .process .mobile-process-wrap .spin img {
+            width: 56%;
+            margin-top: -17px; }
+    .home .portfolio .button {
+      width: 50%; }
+    .home .members .button {
+      width: auto; }
+    .home .members .member-inner {
+      display: none; }
+    .home .members .members-text br {
+      display: none; }
+    .home .press .press-content {
+      padding: 15px; }
+    .home .press .next {
+      display: none !important; }
   .top-title-wrap {
     padding-top: 0;
     margin-top: 6rem;
@@ -8043,21 +8057,37 @@ footer {
       color: #ffffff; }
   #application-form .form-label {
     text-align: left; }
-  .page-template-page--investments .investments .port-cat-list li.portfolio-item {
-    padding-bottom: 1.5rem; }
+  .page-template-page--investments .investments {
+    padding-top: 2rem; }
+    .page-template-page--investments .investments .port-cat-list li.portfolio-item {
+      padding-bottom: 1.5rem; }
+      .page-template-page--investments .investments .port-cat-list li.portfolio-item img {
+        width: 100%;
+        height: auto; }
+      .page-template-page--investments .investments .port-cat-list li.portfolio-item .inner-port-wrap {
+        width: 99%; }
   .page-template-page--philosophy .top-title-wrap {
     margin-bottom: 0;
     padding-bottom: 0; }
   .page-template-page--about .process-title {
     padding-top: 0; }
+    .page-template-page--about .process-title h3 {
+      height: auto; }
   .page-template-page--about .process-info {
     padding-bottom: 3rem; }
+  .page-template-page--about .process-text {
+    height: 80px;
+    display: block;
+    padding-top: 1.5rem;
+    font-size: 1.2rem; }
   .page-template-page--members .member-wrap {
     padding: 15px; }
     .page-template-page--members .member-wrap .member h5 {
       color: #00557c; }
     .page-template-page--members .member-wrap .member .default-img {
       /*           height: 190px; */ }
+  .page-template-page--contact .content {
+    padding: 2rem; }
   footer .sub-nav {
     padding-bottom: 2rem; }
     footer .sub-nav li {

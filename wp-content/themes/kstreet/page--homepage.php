@@ -10,6 +10,8 @@ Template Name: Homepage
 
   <div id="inner-content" class="row">
     <div id="main" class="large-12 medium-12 columns" role="main">
+      <img src="<?php print get_template_directory_uri(); ?>/library/images/bg.jpg" class="hide-for-large-up">
+      <br>
       <h3 class="raleway"><?php the_field('homepage_heading'); ?></h3>    					
     </div> <!-- end #main -->
   </div> <!-- end #inner-content -->
@@ -109,7 +111,7 @@ Template Name: Homepage
     if( $posts ): ?>
       <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
           <?php setup_postdata($post); ?>
-          <div class="large-4 columns portfolio-img">
+          <div class="large-4 medium-6 small-6 columns portfolio-img">
             <a href="<?php the_permalink(); ?>">
               <img src="<?php the_field('investment_image', $post->ID);?>">
             </a>

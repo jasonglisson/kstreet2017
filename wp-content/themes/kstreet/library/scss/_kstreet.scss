@@ -1747,23 +1747,41 @@ footer {
 
 @media only screen and (min-width : 320px) and (max-width : 923px) {
 
-	.home #container {
-		#content {
-			height: 715px !important;
-			#inner-content {
-				padding-top:150px;
-				h3 {
-					font-size: 30px;
-				}
-			}
-		}
+	.home {
+  	background: none;
+  	#container {
+  		#content {
+  			height: 715px !important;
+        #main {
+          text-align: center;
+          h3 p {
+            text-align: center;
+            br {
+              display: none;
+            }
+          }
+        }  			
+  			#inner-content {
+  				padding-top:150px;
+  				h3 {
+  					font-size: 30px;
+  				}
+  			}
+  		}
+  	}		
 		.about-us {
+  		.hide-for-large-up {
+    		padding-top: 1rem;
+  		}
   		.about-text {
     		margin: 0;
   		}
   		.button {
     		width: 100%;
     		margin-bottom: 3rem;
+  		}
+  		img {
+    		width: 100%;
   		}
 		}			
 	
@@ -1812,6 +1830,11 @@ footer {
     	.member-inner {
       	display: none;
     	}
+    	.members-text {
+      	br {
+        	display: none;
+      	}
+    	}
   	}
   
     .press {
@@ -1849,9 +1872,17 @@ footer {
 	
 	.page-template-page--investments {
   	.investments {
+    	padding-top: 2rem;
     	.port-cat-list {
       	li.portfolio-item {
           padding-bottom: 1.5rem;
+          img {
+            width: 100%;
+            height: auto;
+          }
+          .inner-port-wrap {
+            width: 99%; 
+          }
         }
       }
     }
@@ -1867,9 +1898,18 @@ footer {
 	.page-template-page--about {
   	.process-title {
       padding-top: 0;
+      h3 {
+        height: auto;
+      }
   	}
   	.process-info {
       padding-bottom: 3rem;
+  	}
+  	.process-text {
+    	height: 80px;
+    	display: block;
+    	padding-top: 1.5rem;
+    	font-size: 1.2rem;
   	}
   }	
 	
@@ -1886,6 +1926,12 @@ footer {
     	}
   	}
 	}
+	
+	.page-template-page--contact {
+  	.content {
+    	padding: 2rem;
+  	}
+  }	
 	
   footer {
     .sub-nav {
