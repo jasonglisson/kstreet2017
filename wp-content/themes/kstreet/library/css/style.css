@@ -7677,7 +7677,7 @@ button, .round-step, .icon-wrap {
     display: block;
     position: relative; }
   .page-template-page--members .member .default-img {
-    /*   		height: 238px; */ }
+    height: auto; }
   .page-template-page--members .member .member-inner {
     position: absolute;
     top: -15px;
@@ -8085,7 +8085,7 @@ footer {
     .page-template-page--members .member-wrap .member h5 {
       color: #00557c; }
     .page-template-page--members .member-wrap .member .default-img {
-      /*           height: 190px; */ }
+      height: auto; }
   .page-template-page--contact .content {
     padding: 2rem; }
   footer .sub-nav {
