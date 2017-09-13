@@ -7694,8 +7694,12 @@ button, .round-step, .icon-wrap {
       color: #fff;
       font-size: 1.8rem;
       margin: 0 0 5px 0; }
-  .page-template-page--members .member:hover .member-inner {
-    display: block; }
+  @media only screen and (min-width: 320px) and (max-width: 923px) {
+    .page-template-page--members .member:hover .member-inner {
+      display: none; } }
+  @media only screen and (min-width: 920px) and (max-width: 3000px) {
+    .page-template-page--members .member:hover .member-inner {
+      display: block; } }
 
 .member-social {
   padding-top: 5px;
@@ -8026,7 +8030,7 @@ footer {
   .home #container .press .press-content {
     padding: 15px; }
   .home #container .press .next {
-    display: none; }
+    display: none !important; }
   .top-title-wrap {
     padding-top: 0;
     margin-top: 6rem;
