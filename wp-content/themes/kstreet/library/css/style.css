@@ -8043,6 +8043,8 @@ footer {
       display: none; }
     .home .press .press-content {
       padding: 15px; }
+      .home .press .press-content .press-readmore {
+        left: 0; }
     .home .press .next {
       display: none !important; }
   .top-title-wrap {
@@ -8099,6 +8101,12 @@ footer {
     text-align: center; }
   footer .copyright {
     text-align: center; } }
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .home {
+    background: none; }
+    .home #inner-content {
+      padding-top: 3rem; } }
 
 /*
 SMALL (BASE) SIZE

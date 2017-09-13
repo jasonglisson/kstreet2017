@@ -3,13 +3,13 @@
 					</div>
 					<footer class="footer" role="contentinfo">
 						<div class="row">
-							<div class="large-3 columns">
+							<div class="large-3 medium-3 columns">
 								<?php joints_footer_links(); ?>
 							</div>  						
-							<div class="large-6 columns footer-logo">
+							<div class="large-6 medium-6 columns footer-logo">
 								<a href="/"><img src="<?php echo get_template_directory_uri(); ?>/library/images/logo.png"></a>
 							</div>
-							<div class="large-3 columns right-links">
+							<div class="large-3 medium-3 columns right-links">
   							<div class="">
     							<a href="<?php the_field('application_link', 'option'); ?>" target="_blank">Member Login</a>
   							</div>

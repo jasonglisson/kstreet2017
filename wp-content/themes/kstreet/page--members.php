@@ -42,9 +42,9 @@ Template Name: Members
 			            	<?php } else { ?>
 			            		<img class="default-img" src="<?php echo get_template_directory_uri(); ?>/library/images/default-member.jpg">
 			            	<?php } ?>
-			            	<h5 class="show-for-small-only"><?php the_title(); ?></h5>	
+			            	<h5 class="hide-for-large-up"><?php the_title(); ?></h5>	
 			            	<?php if (get_field('linkedin_link', $post)) {?>
-			            		<a target="_blank" class="linkedin show-for-small-only" href="<?php echo get_field('linkedin_link', $post); ?>" title="LinkedIn"><i class="fi-social-linkedin"></i></a>
+			            		<a target="_blank" class="linkedin hide-for-large-up" href="<?php echo get_field('linkedin_link', $post); ?>" title="LinkedIn"><i class="fi-social-linkedin"></i></a>
 			            	<?php } ?>		            		
                   <div class="member-inner">
                     <?php if (get_field('member_image', $post)) {?>
@@ -84,9 +84,9 @@ Template Name: Members
 			            	<?php } else { ?>
 			            		<img class="default-img" src="<?php echo get_template_directory_uri(); ?>/library/images/default-member.jpg">
 			            	<?php } ?>
-			            	<h5 class="show-for-small-only"><?php the_title(); ?></h5>	
+			            	<h5 class="hide-for-large-up"><?php the_title(); ?></h5>	
 			            	<?php if (get_field('linkedin_link', $post)) {?>
-			            		<a target="_blank" class="linkedin show-for-small-only" href="<?php echo get_field('linkedin_link', $post); ?>" title="LinkedIn"><i class="fi-social-linkedin"></i></a>
+			            		<a target="_blank" class="linkedin hide-for-large-up" href="<?php echo get_field('linkedin_link', $post); ?>" title="LinkedIn"><i class="fi-social-linkedin"></i></a>
 			            	<?php } ?>		            		
                   <div class="member-inner">
                     <?php if (get_field('member_image', $post)) {?>

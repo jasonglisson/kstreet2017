@@ -1840,6 +1840,9 @@ footer {
     .press {
       .press-content {
         padding: 15px;
+        .press-readmore {
+          left: 0;
+        }
       }
       .next {
         display: none !important;
@@ -1953,3 +1956,13 @@ footer {
   }
 	
 }
+
+// Ipad styles
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  { 
+  .home {
+    background: none;
+    #inner-content {
+      padding-top: 3rem;
+    }
+  }
+} 
