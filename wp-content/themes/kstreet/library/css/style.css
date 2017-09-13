@@ -7677,7 +7677,7 @@ button, .round-step, .icon-wrap {
     display: block;
     position: relative; }
   .page-template-page--members .member .default-img {
-    height: 238px; }
+    /*   		height: 238px; */ }
   .page-template-page--members .member .member-inner {
     position: absolute;
     top: -15px;
