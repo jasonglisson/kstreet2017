@@ -69,7 +69,14 @@ Template Name: Investments
             				  <img src="<?php the_field('investment_image', $post->ID);?>">
             				</div>  
           				</div>
+        				<?php 
+                  $visit_link = get_field('link_to_company_site', $post->ID);
+                  if(!empty($visit_link)): 
+          		  ?>
           				<h5><?php the_title(); ?> <a href="<?php the_field('link_to_company_site', $post->ID);?>" target="_blank">visit site</a></h5>
+                <?php else: ?>
+                  <h5><?php the_title(); ?></h5>
+                <?php endif; ?>  
           				<div class="blurb"><?php the_field('investment_blurb', $post->ID);?></div>
         				</div>	
           		</li>
