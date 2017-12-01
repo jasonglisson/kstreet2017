@@ -86,14 +86,26 @@ if ( 'POST' === $_SERVER['REQUEST_METHOD'] ) {
 			$posted_content = wp_unslash( $_POST['newcontent'] );
 		}
 	} else {
-		wp_redirect( add_query_arg(
-			array(
-				'a' => 1, // This means "success" for some reason.
-				'plugin' => $plugin,
-				'file' => $file,
-			),
-			admin_url( 'plugin-editor.php' )
-		) );
+		wp_redirect( self_admin_url( "plugin-editor.php?file=$file&plugin=$plugin&scrollto=$scrollto" ) );
+	}
+	exit;
+
+} else {
+
+	if ( isset($_GET['liveupdate']) ) {
+		check_admin_referer('edit-plugin-test_' . $file);
+
+		$error = validate_plugin( $plugin );
+
+		if ( is_wp_error( $error ) ) {
+			wp_die( $error );
+		}
+
+		if ( ( ! empty( $_GET['networkwide'] ) && ! is_plugin_active_for_network( $file ) ) || ! is_plugin_active( $file ) ) {
+			activate_plugin( $plugin, "plugin-editor.php?file=" . urlencode( $file ) . "&phperror=1", ! empty( $_GET['networkwide'] ) );
+		} // we'll override this later if the plugin can be included without fatal error
+
+		wp_redirect( self_admin_url( 'plugin-editor.php?file=' . urlencode( $file ) . '&plugin=' . urlencode( $plugin ) . "&a=te&scrollto=$scrollto" ) );
 		exit;
 	}
 }
@@ -240,12 +252,9 @@ if ( 'POST' === $_SERVER['REQUEST_METHOD'] ) {
 			$plugin_editable_files[] = $plugin_file;
 		}
 	}
-	?>
-	<ul role="tree" aria-labelledby="plugin-files-label">
-	<li role="treeitem" tabindex="-1" aria-expanded="true" aria-level="1" aria-posinset="1" aria-setsize="1">
-		<ul role="group">
-			<?php wp_print_plugin_file_tree( wp_make_plugin_file_tree( $plugin_editable_files ) ); ?>
-		</ul>
+?>
+		<li<?php echo $file == $plugin_file ? ' class="highlight"' : ''; ?>><a href="plugin-editor.php?file=<?php echo urlencode( $plugin_file ) ?>&amp;plugin=<?php echo urlencode( $plugin ) ?>"><?php echo esc_html( $plugin_file ); ?></a></li>
+<?php endforeach; ?>
 	</ul>
 </div>
 <form name="template" id="template" action="plugin-editor.php" method="post">

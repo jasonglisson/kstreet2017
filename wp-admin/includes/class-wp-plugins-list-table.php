@@ -620,15 +620,11 @@ class WP_Plugins_List_Table extends WP_List_Table {
 						'network_only' => __( 'Network Only' ),
 					);
 				} elseif ( $is_active ) {
-					if ( current_user_can( 'deactivate_plugin', $plugin_file ) ) {
-						/* translators: %s: plugin name */
-						$actions['deactivate'] = '<a href="' . wp_nonce_url( 'plugins.php?action=deactivate&amp;plugin=' . urlencode( $plugin_file ) . '&amp;plugin_status=' . $context . '&amp;paged=' . $page . '&amp;s=' . $s, 'deactivate-plugin_' . $plugin_file ) . '" aria-label="' . esc_attr( sprintf( _x( 'Deactivate %s', 'plugin' ), $plugin_data['Name'] ) ) . '">' . __( 'Deactivate' ) . '</a>';
-					}
+					/* translators: %s: plugin name */
+					$actions['deactivate'] = '<a href="' . wp_nonce_url( 'plugins.php?action=deactivate&amp;plugin=' . urlencode( $plugin_file ) . '&amp;plugin_status=' . $context . '&amp;paged=' . $page . '&amp;s=' . $s, 'deactivate-plugin_' . $plugin_file ) . '" aria-label="' . esc_attr( sprintf( _x( 'Deactivate %s', 'plugin' ), $plugin_data['Name'] ) ) . '">' . __( 'Deactivate' ) . '</a>';
 				} else {
-					if ( current_user_can( 'activate_plugin', $plugin_file ) ) {
-						/* translators: %s: plugin name */
-						$actions['activate'] = '<a href="' . wp_nonce_url( 'plugins.php?action=activate&amp;plugin=' . urlencode( $plugin_file ) . '&amp;plugin_status=' . $context . '&amp;paged=' . $page . '&amp;s=' . $s, 'activate-plugin_' . $plugin_file ) . '" class="edit" aria-label="' . esc_attr( sprintf( _x( 'Activate %s', 'plugin' ), $plugin_data['Name'] ) ) . '">' . __( 'Activate' ) . '</a>';
-					}
+					/* translators: %s: plugin name */
+					$actions['activate'] = '<a href="' . wp_nonce_url( 'plugins.php?action=activate&amp;plugin=' . urlencode( $plugin_file ) . '&amp;plugin_status=' . $context . '&amp;paged=' . $page . '&amp;s=' . $s, 'activate-plugin_' . $plugin_file ) . '" class="edit" aria-label="' . esc_attr( sprintf( _x( 'Activate %s', 'plugin' ), $plugin_data['Name'] ) ) . '">' . __( 'Activate' ) . '</a>';
 
 					if ( ! is_multisite() && current_user_can( 'delete_plugins' ) ) {
 						/* translators: %s: plugin name */
@@ -638,6 +634,10 @@ class WP_Plugins_List_Table extends WP_List_Table {
 
 			 } // end if $screen->in_admin( 'network' )
 
+			if ( ( ! is_multisite() || $screen->in_admin( 'network' ) ) && current_user_can( 'edit_plugins' ) && is_writable( WP_PLUGIN_DIR . '/' . $plugin_file ) ) {
+				/* translators: %s: plugin name */
+				$actions['edit'] = '<a href="plugin-editor.php?file=' . urlencode( $plugin_file ) . '" class="edit" aria-label="' . esc_attr( sprintf( __( 'Edit %s' ), $plugin_data['Name'] ) ) . '">' . __( 'Edit' ) . '</a>';
+			}
 		} // end if $context
 
 		$actions = array_filter( $actions );
