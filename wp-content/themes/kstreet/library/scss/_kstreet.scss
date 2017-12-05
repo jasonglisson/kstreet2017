@@ -1249,10 +1249,34 @@ button, .round-step, .icon-wrap {
         list-style-type: none;
         position: relative;
         transition: .3s all;
-        img {
+        display: inline-block;
+        float: left;  
+        margin-bottom: 30px;      
+        .port-img-wrap {
           width: 255px;
           height: 160px;
           border: 2px solid #808080;
+          position: relative;
+          background: #fff;
+          overflow: hidden;
+          .port-inner-img {
+            width: 255px;
+            height: 160px;            
+            padding: 10px;
+            margin: 0 auto;
+            display: block;
+            img {
+              top: 0;
+              position: absolute;
+              bottom: 0;
+              margin: auto;
+              display: block;
+              left: 0;
+              right: 0;
+              max-height: 85%;
+              max-width: 85%;
+            }
+          }         
         }
         .inner-port-wrap {
           position: absolute;
@@ -1880,11 +1904,10 @@ footer {
       	li.portfolio-item {
           padding-bottom: 1.5rem;
           img {
-            width: 100%;
             height: auto;
           }
           .inner-port-wrap {
-            width: 99%; 
+
           }
         }
       }

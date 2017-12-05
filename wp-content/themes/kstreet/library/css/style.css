@@ -7589,11 +7589,33 @@ button, .round-step, .icon-wrap {
     .page-template-page--investments .investments .port-cat-list li.portfolio-item {
       list-style-type: none;
       position: relative;
-      transition: .3s all; }
-      .page-template-page--investments .investments .port-cat-list li.portfolio-item img {
+      transition: .3s all;
+      display: inline-block;
+      float: left;
+      margin-bottom: 30px; }
+      .page-template-page--investments .investments .port-cat-list li.portfolio-item .port-img-wrap {
         width: 255px;
         height: 160px;
-        border: 2px solid #808080; }
+        border: 2px solid #808080;
+        position: relative;
+        background: #fff;
+        overflow: hidden; }
+        .page-template-page--investments .investments .port-cat-list li.portfolio-item .port-img-wrap .port-inner-img {
+          width: 255px;
+          height: 160px;
+          padding: 10px;
+          margin: 0 auto;
+          display: block; }
+          .page-template-page--investments .investments .port-cat-list li.portfolio-item .port-img-wrap .port-inner-img img {
+            top: 0;
+            position: absolute;
+            bottom: 0;
+            margin: auto;
+            display: block;
+            left: 0;
+            right: 0;
+            max-height: 85%;
+            max-width: 85%; }
       .page-template-page--investments .investments .port-cat-list li.portfolio-item .inner-port-wrap {
         position: absolute;
         top: -9px;
@@ -8064,10 +8086,7 @@ footer {
     .page-template-page--investments .investments .port-cat-list li.portfolio-item {
       padding-bottom: 1.5rem; }
       .page-template-page--investments .investments .port-cat-list li.portfolio-item img {
-        width: 100%;
         height: auto; }
-      .page-template-page--investments .investments .port-cat-list li.portfolio-item .inner-port-wrap {
-        width: 99%; }
   .page-template-page--philosophy .top-title-wrap {
     margin-bottom: 0;
     padding-bottom: 0; }

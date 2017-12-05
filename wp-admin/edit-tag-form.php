@@ -75,8 +75,12 @@ do_action( "{$taxonomy}_pre_edit_form", $tag, $taxonomy ); ?>
 	<p><strong><?php echo $message; ?></strong></p>
 	<?php if ( $wp_http_referer ) { ?>
 	<p><a href="<?php echo esc_url( wp_validate_redirect( esc_url_raw( $wp_http_referer ), admin_url( 'term.php?taxonomy=' . $taxonomy ) ) ); ?>"><?php
+<<<<<<< HEAD
+		echo esc_html( $tax->labels->back_to_items );
+=======
 		/* translators: %s: taxonomy name */
 		printf( _x( '&larr; Back to %s', 'admin screen' ), $tax->labels->name );
+>>>>>>> 631254539d52aef7b693f33b21b6cf8301b9ba88
 	?></a></p>
 	<?php } ?>
 </div>
